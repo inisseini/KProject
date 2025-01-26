@@ -1,0 +1,2032 @@
+@charset "UTF-8";
+:root {
+  --grey: #c9c9c9;
+  --black: #424242;
+  --paper: #fdfdfd;
+  --stickerYellow: #fffbd8;
+  --stickerGreen: #eaffd0;
+  --markerYellow: rgba(255, 255, 0, 0.8);
+  --markerGreen: #b0ef63;
+  --markerRed: #ffa096;
+  --darkerGreen: #7ac91a;
+  --darkerRed: #cd2552bd;
+  --textpadding: 10px 20px;
+  --mediaScreen: 640px;
+  --lineHeight: 1.8em;
+}
+
+/* リセットCSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 要素をデフォルトの表示にリセット */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* リストスタイルをリセット */
+ol,
+ul {
+  list-style: none;
+}
+
+/* ブロック要素の余白をリセット */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+/* テーブル要素のスタイルをリセット */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* デフォルトのフォームスタイルをリセット */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input:-internal-autofill-selected {
+  -webkit-appearance: menulist-button;
+     -moz-appearance: menulist-button;
+          appearance: menulist-button;
+  background-image: none !important;
+  background-color: var(--paper) !important;
+  color: fieldtext !important;
+}
+
+/* ハイパーリンクの装飾をリセット */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 画像のデフォルトスタイルをリセット */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* フォーカス時の見た目をリセット */
+:focus {
+  outline: none;
+}
+
+html {
+  width: 100%;
+  height: 100dvh;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* フォントサイズクラス */
+/* 注釈などに使う小さい文字 */
+.fs {
+  font-size: 0.875em; /* 基準フォントサイズの 75% */
+  line-height: 1.8em; /* 行間を狭く */
+}
+
+/* 標準サイズ（デフォルト） */
+.fm {
+  font-size: 1em; /* 基準フォントサイズ */
+  line-height: 1.8em; /* 適切な行間 */
+}
+
+/* 見出しやタイトル用の大きな文字 */
+.fl,
+h1 {
+  font-size: 1.5rem; /* 基準フォントサイズの 150% */
+  line-height: 1.8em; /* タイトルとしてバランス良く */
+  font-weight: bold; /* 見出し用に太字を推奨 */
+}
+
+body {
+  width: 100%;
+  line-height: 1.8em;
+}
+
+.wooden-desk {
+  width: 100dvw;
+  height: 100%;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 243, 223, 0.8), transparent 60%), radial-gradient(circle at 70% 80%, rgba(243, 229, 200, 0.6), transparent 70%), linear-gradient(45deg, #f9e8c6 30%, #f7e3b4 70%);
+  background-size: cover; /* 自然な模様に見せる */
+  border: 2px solid #d7c8a6; /* ナチュラルな木材の縁色 */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1); /* 柔らかな影 */
+  position: relative;
+}
+.wooden-desk::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(-45deg, rgba(255, 243, 223, 0.3), rgba(243, 229, 200, 0.3) 10px, rgba(237, 213, 180, 0.3) 20px);
+  opacity: 0.6; /* 木目の透明度 */
+  pointer-events: none; /* クリックイベントを無視 */
+  z-index: 0; /* 天板の模様を上に配置 */
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Yomogi";
+  src: url(./generalAssets/fonts/Yomogi-Regular.ttf) format(truetype);
+}
+.App {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.App .TopPage {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: calc(100% - 40px);
+  background-color: var(--paper);
+  margin: 20px 25px;
+  position: relative;
+  z-index: 0;
+  box-shadow: 4px 4px 8px -4px var(--grey);
+}
+@media screen and (max-width: 640px) {
+  .App .TopPage {
+    width: 100%;
+    margin: 0;
+  }
+}
+.App .TopPage .tag {
+  position: fixed;
+  top: 20px;
+  right: 0px;
+  width: 50px;
+  height: 100px;
+  opacity: 1 !important;
+  border-radius: 15px 0px 0px 15px;
+  pointer-events: all;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 4px 4px 8px -4px var(--grey);
+  outline-offset: -5px;
+  z-index: 10;
+}
+.App .TopPage .tag p {
+  width: 100%;
+  text-align: center;
+}
+.App .TopPage .tag.open {
+  outline: 2px solid var(--markerGreen);
+}
+.App .TopPage .tag.open img {
+  width: 70%;
+  margin: 0 auto;
+}
+.App .TopPage .tag.close {
+  outline: 2px solid var(--markerRed);
+}
+.App .TopPage .tag.close img {
+  width: 80%;
+  margin: 0 auto;
+}
+.App .TopPage .section {
+  position: relative;
+  width: 100%;
+  background-image: url(./TopPage/assets/image/paperWhite.png);
+  background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
+  background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
+  background-position: center, 8px 0; /* 罫線の位置を調整 */
+  background-blend-mode: multiply; /* 紙と罫線を自然に重ねる */
+  z-index: 1;
+  padding: 30px 0;
+}
+.App .TopPage .section::after {
+  position: absolute;
+  top: 150px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  content: "";
+  z-index: -1;
+  background-image: linear-gradient(180deg, var(--grey) 1px, transparent 1px);
+  background-size: 100% 1.8em;
+  line-height: 1.8em;
+}
+.App .TopPage .section1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.App .TopPage .section1 .contentsContainer {
+  font-family: "Yomogi", sans-serif;
+  width: calc(100% - 20px);
+  flex-shrink: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px 0;
+  margin: 10px;
+}
+.App .TopPage .section1 .contentsContainer .column {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 0 10px;
+}
+@media (max-width: 640px) {
+  .App .TopPage .section1 .contentsContainer .column {
+    flex-direction: column;
+  }
+}
+.App .TopPage .section1 .contentsContainer .column1 {
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media (max-width: 640px) {
+  .App .TopPage .section1 .contentsContainer .column1 {
+    height: 40dvh;
+  }
+}
+.App .TopPage .section1 .contentsContainer .concept {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1/1;
+  background-size: contain;
+  background-position: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media (max-width: 640px) {
+  .App .TopPage .section1 .contentsContainer .concept h1 {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: #fff;
+    transform: translate(0, -50%);
+    text-shadow: var(--black) 2px 0px, var(--black) -2px 0px, var(--black) 0px -2px, var(--black) 0px 2px, var(--black) 2px 2px, var(--black) -2px 2px, var(--black) 2px -2px, var(--black) -2px -2px, var(--black) 1px 2px, var(--black) -1px 2px, var(--black) 1px -2px, var(--black) -1px -2px, var(--black) 2px 1px, var(--black) -2px 1px, var(--black) 2px -1px, var(--black) -2px -1px;
+  }
+}
+.App .TopPage .section1 .contentsContainer .concept .topImgContainer {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  margin: 0 auto;
+}
+.App .TopPage .section1 .contentsContainer .concept .topImgContainer img {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.App .TopPage .section1 .contentsContainer .concept .topImgContainer img:first-child {
+  position: relative;
+}
+.App .TopPage .section1 .contentsContainer .linkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px 0;
+  z-index: 100;
+  flex-grow: 0;
+  text-align: center;
+}
+.App .TopPage .section1 .contentsContainer .linkContainer .toMetaverse,
+.App .TopPage .section1 .contentsContainer .linkContainer .toWeb3D {
+  width: 100%;
+  white-space: nowrap;
+  max-width: 400px;
+  margin: 0 auto;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+.App .TopPage .section1 .contentsContainer .linkImg {
+  width: 100%;
+}
+.App .TopPage .section1 .contentsContainer .linkImg img {
+  background-color: var(--paper);
+  width: calc(100% - 40px);
+  margin: 20px 10px 20px 10px;
+  padding: 10px;
+}
+@media (max-width: 640px) {
+  .App .TopPage .section1 .contentsContainer .linkImg img {
+    display: none;
+  }
+}
+.App .TopPage .section2 {
+  width: 100%;
+}
+.App .SubPage {
+  width: calc(100% - 40px);
+  max-width: 960px;
+  margin: 20px 25px 20px 15px;
+  height: 100%;
+  background-color: var(--paper);
+  position: fixed;
+  top: 0px;
+  box-shadow: 4px 4px 8px -4px var(--grey);
+  transition: all 1s ease-out;
+  background-image: url(./TopPage/assets/image/paper.png);
+  background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
+  background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
+  background-position: center, 8px 0; /* 罫線の位置を調整 */
+  background-blend-mode: multiply; /* 紙と罫線を自然に重ねる */
+  z-index: 0;
+  left: calc(50% - 10px);
+  transform: translate(-50%, 0);
+}
+@media (max-width: 640px) {
+  .App .SubPage {
+    left: 0;
+    top: 0;
+    transform: none;
+    margin: 0;
+    width: 100%;
+  }
+}
+.App .SubPage .item1 {
+  grid-area: item1;
+  margin: 0 auto;
+}
+.App .SubPage .item2 {
+  grid-area: item2;
+}
+.App .SubPage .item3 {
+  grid-area: item3;
+}
+.App .SubPage .item4 {
+  grid-area: item4;
+  margin: 0 auto;
+}
+.App .SubPage.open {
+  animation: subPageEnter 1s ease forwards;
+}
+@media (max-width: 640px) {
+  .App .SubPage.open {
+    animation: subPageEnterMobile 0.5s ease forwards;
+  }
+}
+.App .SubPage.close {
+  animation: subPageEnterReverse 1s ease forwards;
+}
+@media (max-width: 640px) {
+  .App .SubPage.close {
+    animation: subPageEnterReverseMobile 0.5s ease forwards;
+  }
+}
+.App .SubPage .tag {
+  position: absolute;
+  top: 20px;
+  width: 40px;
+  height: 100px;
+  opacity: 1 !important;
+  border-radius: 10px 15px 15px 10px;
+  pointer-events: all;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 4px 4px 8px -4px var(--grey);
+  outline-offset: -10px;
+  left: calc(100% - 10px);
+  font-family: "Yomogi", sans-serif;
+}
+.App .SubPage .tag p {
+  width: 100%;
+  text-align: center;
+}
+.App .SubPage .tag.open {
+  outline: 4px solid var(--markerGreen);
+}
+.App .SubPage .tag.open img {
+  width: 70%;
+  margin: 0 auto;
+}
+.App .SubPage .tag.close {
+  outline: 4px solid var(--markerRed);
+}
+.App .SubPage .tag.close img {
+  width: 80%;
+  margin: 0 auto;
+}
+.App .SubPage::after {
+  position: absolute;
+  top: 150px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  content: "";
+  z-index: -1;
+  background-image: linear-gradient(180deg, var(--grey) 1px, transparent 1px);
+  background-size: 100% 1.8em;
+  line-height: 1.8em;
+}
+.App .SubPage .tagToMetaverse {
+  top: 150px;
+  outline: 4px solid var(--markerRed);
+  width: 30px;
+}
+.App .SubPage .tagToWeb3D {
+  top: 290px;
+  outline: 4px solid var(--markerRed);
+  width: 30px;
+}
+.App .SubPage .tagToQuiz {
+  top: 430px;
+  outline: 4px solid var(--markerRed);
+  width: 30px;
+}
+@keyframes subPageEnter {
+  0% {
+    left: calc(50% - 10px);
+    transform: translate(-50%, 0);
+  }
+  50% {
+    left: 105%;
+    z-index: -10;
+  }
+  100% {
+    left: calc(50% - 10px);
+    transform: translate(-50%, 0);
+    z-index: 100;
+  }
+}
+@keyframes subPageEnterReverse {
+  0% {
+    left: calc(50% - 10px);
+    transform: translate(-50%, 0);
+    z-index: 100;
+  }
+  50% {
+    left: 105%;
+    z-index: -10;
+  }
+  100% {
+    left: calc(50% - 10px);
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes subPageEnterMobile {
+  0% {
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  50% {
+    left: 105%;
+    z-index: -10;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: none;
+    z-index: 5;
+  }
+}
+@keyframes subPageEnterReverseMobile {
+  0% {
+    top: 0;
+    left: 0;
+    transform: none;
+    z-index: 5;
+  }
+  50% {
+    left: 105%;
+    z-index: -10;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
+header,
+.subHeader {
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: grid;
+  grid-template-areas: "item1 item2 item3" "item1 item4 item4";
+  grid-template-columns: 4fr 1fr 1fr; /* 列の幅を均等に分割 */
+  grid-template-rows: auto auto; /* 行の高さを自動調整 */
+  grid-template-columns: 4fr 1fr 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  padding: 0px 60px 10px 30px;
+}
+header .item1,
+.subHeader .item1 {
+  grid-area: item1;
+  margin: 0 auto;
+}
+header .item2,
+.subHeader .item2 {
+  grid-area: item2;
+}
+header .item3,
+.subHeader .item3 {
+  grid-area: item3;
+}
+header .item4,
+.subHeader .item4 {
+  grid-area: item4;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0;
+}
+header .Logo,
+.subHeader .Logo {
+  font-family: "Yomogi", sans-serif;
+  display: flex;
+  align-items: center;
+  width: 60dvw;
+  max-width: 480px;
+  cursor: pointer;
+}
+header .Name,
+header .Date,
+.subHeader .Name,
+.subHeader .Date {
+  color: var(--black);
+  display: flex;
+  align-items: center;
+}
+header .Name span,
+header .Date span,
+.subHeader .Name span,
+.subHeader .Date span {
+  font-family: "Yomogi", sans-serif;
+  flex-grow: 1;
+  border-bottom: 1px solid var(--grey);
+  text-align: center;
+  padding: 0;
+}
+header .HakaseGoal,
+.subHeader .HakaseGoal {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  transform: rotate(5deg);
+}
+
+.sticker-box {
+  min-width: 100px;
+  position: relative;
+  transition: 0.2s all ease;
+  box-shadow: 4px 8px 8px -4px var(--grey);
+  border-radius: 0px;
+  padding: 1em 0;
+}
+.sticker-box.yellow {
+  background-color: var(--stickerYellow);
+}
+.sticker-box.green {
+  background-color: var(--stickerGreen);
+}
+
+.peel {
+  animation: stick-base 1s linear forwards;
+  border-radius: 0px;
+}
+.peel:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  background-color: transparent;
+  transition: 2s all ease;
+  animation: stick-edge 1s linear forwards;
+}
+.peel.yellow::after {
+  border: 0px solid #fff7b2;
+}
+.peel.green::after {
+  border: 0px solid #d4ff9f;
+}
+.peel.white::after {
+  border: 0px solid #ececec;
+}
+
+@keyframes stick-base {
+  0% {
+    -webkit-clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%, 0 0);
+  }
+  50% {
+    -webkit-clip-path: polygon(calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%, 0 0);
+  }
+  100% {
+    -webkit-clip-path: polygon(calc(100% - 0.5px) 0, 100% 0.5px, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(calc(100% - 0.5px) 0, 100% 0.5px, 100% 100%, 0 100%, 0 0);
+  }
+}
+@keyframes stick-edge {
+  from {
+    border-width: 15px;
+  }
+  to {
+    border-width: 0px;
+  }
+}
+.marker {
+  line-height: 1.8em; /* 可変文字サイズやクロスブラウザ対応 */
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  height: 1.8em;
+}
+.marker::after {
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  -webkit-clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+          clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  content: "";
+  width: calc(100% + 10px);
+  height: 50%;
+  filter: blur(1px);
+  animation: markerLine 1s linear forwards;
+  z-index: -1;
+}
+.marker.yellow::after {
+  background: linear-gradient(transparent 40%, var(--markerYellow) 40%);
+}
+.marker.green::after {
+  background: linear-gradient(transparent 40%, var(--markerGreen) 40%);
+}
+.marker.white::after {
+  background: linear-gradient(transparent 40%, var(--paper) 40%);
+}
+.marker.red::after {
+  background: linear-gradient(transparent 40%, var(--markerRed) 40%);
+}
+
+@keyframes markerLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% + 10px);
+  }
+}
+.marker-box {
+  position: relative;
+  background-color: transparent;
+  text-align: left;
+  padding: 20px 20px;
+  height: 1.8em;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+}
+.marker-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: 10px solid transparent;
+  pointer-events: none;
+  -o-border-image: linear-gradient(90deg, var(--markerRed), var(--markerRed), var(--markerRed));
+     border-image: linear-gradient(90deg, var(--markerRed), var(--markerRed), var(--markerRed));
+  border-image-slice: 1;
+  box-sizing: border-box;
+  z-index: 0;
+  animation: markerBorder 2s linear forwards;
+}
+
+.marker-box-green {
+  position: relative;
+  background-color: transparent;
+  text-align: left;
+  padding: 20px 20px;
+  height: 1.8em;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+}
+.marker-box-green::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: 10px solid transparent;
+  pointer-events: none;
+  -o-border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
+     border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
+  border-image-slice: 1;
+  box-sizing: border-box;
+  z-index: 0;
+  animation: markerBorder 2s linear forwards;
+}
+
+@keyframes markerBorder {
+  0% {
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+            clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  }
+  25% {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 0%, 0% 0%);
+            clip-path: polygon(0% 0%, 100% 0%, 0% 0%, 0% 0%);
+  }
+  50% {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+.peelable {
+  position: relative;
+  cursor: pointer;
+  pointer-events: all;
+}
+.peelable.sticker-img {
+  background-color: #ff4a85;
+}
+.peelable.sticker-shadow {
+  opacity: 0.6;
+}
+
+.sticker {
+  position: relative;
+  aspect-ratio: 1/1;
+  margin: 30px auto;
+  pointer-events: all;
+  border-radius: 50%;
+  width: 100px;
+  margin: 0;
+}
+.sticker.squere {
+  border-radius: 0 !important;
+}
+.sticker.squere div {
+  border-radius: 0 !important;
+}
+.sticker.squere.sticker-front {
+  border-radius: 0 !important;
+}
+.sticker .sticker-img {
+  background-size: contain;
+  background-position: center;
+  border-right: 3px solid var(--grey);
+  border-bottom: 3px solid var(--grey);
+  box-sizing: border-box;
+}
+.sticker .sticker-img.sticker-front {
+  background-color: var(--paper);
+}
+
+.hakarun1 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun1.png);
+}
+
+.hakarun2 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun2.png);
+}
+
+.hakarun3 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun3.png);
+}
+
+.hakarun4 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun4.png);
+}
+
+.hakarun5 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun5.png);
+}
+
+.hakarun6 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun6.png);
+}
+
+.hakarun7 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun7.png);
+}
+
+.hakarun8 .sticker-img {
+  background-image: url(./TopPage/assets/image/hakarun8.png);
+}
+
+.taped {
+  position: relative;
+}
+.taped::after {
+  content: "";
+  width: 5em;
+  height: 1.8em;
+  top: -0.8em;
+  left: 50%;
+  position: absolute;
+  background-color: rgba(255, 235, 59, 0.074); /* テープの色 (半透明の黄色) */
+  z-index: 10;
+  transform: rotate(-1deg) translate(-50%, 0); /* テープを少し斜めにする */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); /* テープの影 */
+  /* テープのテクスチャ */
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 10%);
+  background-size: 10px 100%;
+}
+
+.husen {
+  height: 3em;
+  width: 18em;
+  max-width: calc(100% - 20px);
+  line-height: 3em;
+  position: relative;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(240, 240, 240, 0.921) 0%, rgba(240, 240, 240, 0.921) 85%, var(--markerRed) 85%, var(--markerRed) 100%);
+  box-shadow: 5px 4px 4px 0px var(--grey);
+  border-radius: 0px;
+  pointer-events: all;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 20px;
+  font-family: "Yomogi", sans-serif;
+}
+.husen.green {
+  background: linear-gradient(90deg, rgba(240, 240, 240, 0.921) 0%, rgba(240, 240, 240, 0.921) 85%, var(--markerGreen) 85%, var(--markerGreen) 100%);
+}
+.husen.center {
+  padding-left: 0;
+}
+.husen span {
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: var(--paper);
+  top: 50%;
+  right: 7.5%;
+  transform: translate(50%, -50%);
+  color: rgb(255, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  background: url(./TopPage/assets/image/right-circle.svg) no-repeat center;
+  background-size: contain;
+  fill: var(--paper);
+}
+.husen.bottom span {
+  transform: translate(50%, -50%) rotate(90deg);
+}
+.husen.pointer-less {
+  cursor: default;
+}
+
+.husen-reverse {
+  height: 3em;
+  width: 18em;
+  line-height: 3em;
+  position: relative;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, var(--markerRed) 0, var(--markerRed) 15%, rgba(240, 240, 240, 0.921) 15%, rgba(240, 240, 240, 0.921) 100%);
+  box-shadow: -5px 4px 4px 0px var(--grey);
+  border-radius: 0px;
+  pointer-events: all;
+  cursor: pointer;
+  padding: 0 5px;
+  text-align: center;
+}
+.husen-reverse.green {
+  background: linear-gradient(90deg, var(--markerGreen) 0, var(--markerGreen) 15%, rgba(240, 240, 240, 0.921) 15%, rgba(240, 240, 240, 0.921) 100%);
+}
+.husen-reverse span {
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: var(--paper);
+  top: 50%;
+  left: 7.5%;
+  color: rgb(255, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  background: url(./TopPage/assets/image/right-circle.svg) no-repeat center;
+  background-size: contain;
+  fill: var(--paper);
+  transform: translate(-50%, -50%) scaleX(-1);
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translateY(-200px) scale(0.5); /* 上空に小さく配置 */
+    opacity: 0; /* 最初は透明 */
+  }
+  100% {
+    transform: translateY(0) scale(1); /* 通常位置で元のサイズ */
+    opacity: 1; /* 完全に表示 */
+  }
+}
+.diviner {
+  width: 100%;
+  height: 1px;
+  content: "";
+  background-color: var(--grey);
+  position: relative;
+  box-shadow: 0px 0px 3px 1px var(--grey);
+  margin: 0;
+  z-index: 3;
+}
+.diviner::after {
+  content: "";
+  width: 5em;
+  height: 1.8em;
+  top: -0.6em;
+  left: 25%;
+  position: absolute;
+  background-color: rgba(255, 235, 59, 0.074); /* テープの色 (半透明の黄色) */
+  z-index: 3;
+  transform: rotate(-1deg) translate(-25%, 0); /* テープを少し斜めにする */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); /* テープの影 */
+  /* テープのテクスチャ */
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 10%);
+  background-size: 10px 100%;
+}
+.diviner::before {
+  content: "";
+  width: 5em;
+  height: 1.8em;
+  top: -0.6em;
+  right: 25%;
+  position: absolute;
+  background-color: rgba(255, 235, 59, 0.074); /* テープの色 (半透明の黄色) */
+  z-index: 3;
+  transform: rotate(-1deg) translate(25%, 0); /* テープを少し斜めにする */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); /* テープの影 */
+  /* テープのテクスチャ */
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 10%);
+  background-size: 10px 100%;
+}
+.diviner.large::after {
+  display: none;
+}
+.diviner.large::before {
+  top: inherit;
+  bottom: -0.9em;
+  right: 50%;
+  transform: rotate(0.25deg) translate(50%, 0);
+  width: 90%;
+  background-color: rgba(118, 184, 255, 0.1176470588);
+  background-image: linear-gradient(90deg, rgba(229, 246, 255, 0.342) 10%, rgba(163, 228, 255, 0) 10%);
+}
+
+.animatedItem {
+  opacity: 0;
+}
+
+.animate {
+  opacity: 0;
+}
+.animate.vertical {
+  animation: fadeInVertical 0.5s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
+}
+.animate.horizon {
+  animation: fadeInHorizon 0.5s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
+}
+
+@keyframes fadeInVertical {
+  0% {
+    transform: translateX(-5px) translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInHorizon {
+  0% {
+    transform: translateX(-20px) translateY(-5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.text {
+  font-family: "Yomogi", sans-serif;
+  padding: 0 15px;
+}
+
+.titleContainer {
+  width: 100%;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  margin: 3.6em auto 1.8em auto;
+  text-align: center;
+  white-space: nowrap;
+}
+.titleContainer h1 {
+  position: relative;
+  z-index: 2;
+}
+
+footer {
+  font-family: "Yomogi", sans-serif;
+}
+footer .section3 {
+  background-image: url(./TopPage/assets/image/paper.png) !important;
+}
+
+.forUser {
+  display: flex;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.forUser .husen {
+  flex-shrink: 0;
+}
+
+.menuContainer {
+  margin-bottom: 80px;
+  font-family: "Yomogi", sans-serif;
+}
+
+.contactForm {
+  width: 200px;
+  position: relative;
+  transition: 0.2s all ease;
+  box-shadow: 4px 8px 8px -4px var(--grey);
+  border-radius: 5px;
+  padding: 0.9em;
+  background-color: var(--stickerGreen);
+  margin: 60px auto;
+  font-family: "Yomogi", sans-serif;
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 5px;
+  cursor: pointer;
+}
+.contactForm svg {
+  width: 1.8em;
+  height: 1.8em;
+  margin-top: 0.5em;
+}
+.contactForm input {
+  font-family: "Yomogi", sans-serif;
+}
+
+.FAQ {
+  pointer-events: all;
+  font-family: "Yomogi", sans-serif;
+  pointer-events: all;
+}
+
+.FAQBox {
+  position: relative;
+  background-color: var(--paper);
+  width: 50%;
+  max-width: 300px;
+  text-align: left;
+  padding: 10px 10px;
+  border: 10px solid transparent;
+  -o-border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
+     border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
+  border-image-slice: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  flex-shrink: 0 !important;
+}
+.FAQBox .questionItem {
+  white-space: wrap;
+  min-width: 150px;
+}
+.FAQBox .questionItem p {
+  white-space: wrap;
+}
+
+.answerPane {
+  width: 50%;
+  overflow-y: auto;
+}
+.answerPane p {
+  white-space: wrap;
+}
+
+@media (max-width: 640px) {
+  .PC {
+    display: none !important;
+  }
+}
+
+.MOBILE {
+  display: none !important;
+}
+@media (max-width: 640px) {
+  .MOBILE {
+    display: inherit !important;
+  }
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .FAQContainer {
+    flex-direction: column !important; /* 縦並びに変更 */
+    overflow-x: scroll !important; /* 横スクロール有効化 */
+  }
+  .FAQBox {
+    width: 100%;
+    max-width: inherit;
+    display: flex !important;
+    flex-direction: row !important; /* 横スクロール */
+    overflow-x: scroll !important; /* 横スクロール有効化 */
+    gap: 0 10px;
+  }
+  .answerPane {
+    width: 100%;
+    overflow-y: auto;
+  }
+}
+.Web3D {
+  width: calc(100% - 40px);
+  position: relative;
+  background-image: url(./TopPage/assets/image/paperWhite.png);
+  background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
+  background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
+  background-position: center, 8px 0; /* 罫線の位置を調整 */
+  background-blend-mode: multiply; /* 紙と罫線を自然に重ねる */
+  padding: 0px 0;
+  font-family: "Yomogi", sans-serif;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .Web3D {
+    width: 100%;
+  }
+}
+
+.Web3DContentscontainer {
+  background-color: var(--paper);
+  padding: 0 0 20px 0;
+  margin: 20px auto;
+}
+.Web3DContentscontainer::before {
+  position: absolute;
+  top: 150px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  content: "";
+  z-index: 0;
+  background-image: linear-gradient(180deg, var(--grey) 1px, transparent 1px);
+  background-size: 100% 1.8em;
+  line-height: 1.8em;
+  pointer-events: none;
+}
+@media (max-width: 768) {
+  .Web3DContentscontainer {
+    width: 100%;
+  }
+}
+
+.objectsContainer {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+  gap: 20px 0;
+  padding: 20px 0;
+}
+.objectsContainer .UI-top {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+  align-items: center;
+  gap: 0 20px;
+  position: relative;
+}
+.objectsContainer .UI-top .switchObjects {
+  display: inline-block;
+  white-space: nowrap;
+}
+.objectsContainer .UI-bottom {
+  display: flex;
+  justify-content: space-around;
+  flex: 1.5;
+  padding: 20px 0;
+  align-items: center;
+  gap: 0 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  pointer-events: all;
+  aspect-ratio: 3/1;
+}
+.objectsContainer .Canvas {
+  margin: 0 auto;
+  padding: 0;
+  flex: 1;
+  max-width: 700px;
+  aspect-ratio: 1/1;
+  height: auto !important;
+  background-color: #a3a3a3;
+  cursor: pointer;
+}
+
+.QuizContainer {
+  width: calc(100% - 30px);
+  max-width: 600px;
+  height: 100%;
+  overflow-y: auto;
+  max-height: 80dvh;
+  margin: 30px auto;
+  padding: 20px 15px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  flex-shrink: 0;
+  flex-grow: 1;
+  pointer-events: all;
+  flex-basis: calc(100% - 30px);
+  background-color: var(--paper);
+}
+.QuizContainer img {
+  width: 90%;
+  margin: 0 auto 20px auto;
+}
+.QuizContainer.result {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+.QuizContainer.result img {
+  width: 200px;
+  margin: 0 auto;
+}
+.QuizContainer .question-container {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+.QuizContainer .question-container .options-list {
+  list-style: none;
+  padding: 0;
+}
+.QuizContainer .question-container .options-list label {
+  display: flex;
+  gap: 0 10px;
+  cursor: pointer;
+}
+.QuizContainer .question-container .options-list li {
+  margin-bottom: 10px;
+}
+.QuizContainer .question-container .tab-container {
+  display: flex;
+  margin-top: 20px;
+}
+.QuizContainer .question-container .tab-container .tab-btn {
+  flex: 1;
+  padding: 10px;
+  color: var(--black);
+  border: none;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  background: var(--markerGreen);
+  box-sizing: border-box;
+  position: relative;
+}
+.QuizContainer .question-container .tab-container .tab-btn:not(:last-child) {
+  margin-right: 5px;
+}
+.QuizContainer .question-container .tab-container .tab-btn:not(:last-child).active::after {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  content: "";
+  width: calc(200% + 5px);
+  height: 5px;
+  background-color: var(--markerGreen);
+  border-radius: 0 4px 0 0;
+}
+.QuizContainer .question-container .tab-container .tab-btn:not(:last-child).active::before {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: var(--markerGreen);
+}
+.QuizContainer .question-container .tab-container .tab-btn.active::after {
+  position: absolute;
+  bottom: -10px;
+  left: inherit;
+  right: 0;
+  content: "";
+  width: calc(200% + 5px);
+  height: 5px;
+  background-color: var(--markerGreen);
+  border-radius: 4px 0 0 0;
+}
+.QuizContainer .question-container .tab-container .tab-btn.active::before {
+  position: absolute;
+  bottom: -5px;
+  left: inherit;
+  right: 0;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: var(--markerGreen);
+}
+.QuizContainer .question-container .tab-container .tab-btn:disabled {
+  background: var(--darkerGreen);
+  cursor: not-allowed;
+}
+.QuizContainer .question-container .tab-container .tab-btn:disabled::after {
+  background-color: var(--darkerGreen);
+}
+.QuizContainer .question-container .tab-container .tab-btn:disabled::before {
+  background-color: var(--darkerGreen);
+}
+.QuizContainer .question-container .tab-container .tab-btn:hover {
+  background: var(--darkerGreen);
+}
+.QuizContainer .question-container .tab-container .tab-btn:hover.active::after {
+  background: var(--darkerGreen);
+}
+.QuizContainer .question-container .tab-container .tab-btn:hover.active::before {
+  background: var(--darkerGreen);
+}
+.QuizContainer .question-container .tab-container .hint-btn {
+  background: var(--markerGreen);
+}
+.QuizContainer .question-container .tab-container .hint-btn:hover {
+  background: var(--darkerGreen);
+}
+.QuizContainer .question-container .tab-content {
+  margin-top: 10px;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid var(--grey);
+  background-color: var(--paper);
+}
+.QuizContainer .question-container .tab-content .feedback-tab {
+  color: var(--black);
+}
+.QuizContainer .question-container .tab-content .hint-tab {
+  color: var(--black);
+}
+.QuizContainer .question-container .detailed-btn {
+  margin: 10px auto;
+  display: block;
+  padding: 8px 12px;
+  background: var(--markerGreen);
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.QuizContainer .feedback-section {
+  min-height: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+.QuizContainer .feedback-section .submit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.QuizContainer .feedback-section .feedbackIndex {
+  display: flex;
+  justify-content: space-between;
+}
+.QuizContainer .feedback-section .feedbackIndex .starContainer {
+  display: flex;
+}
+.QuizContainer .feedback-section .feedbackIndex .starContainer .star {
+  cursor: pointer;
+  color: var(--grey);
+}
+.QuizContainer .feedback-section .feedbackIndex .starContainer .star.active {
+  color: var(--markerRed);
+}
+.QuizContainer .retry-btn,
+.QuizContainer .result-btn {
+  padding: 10px 20px;
+  background: var(--markerRed);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+}
+.QuizContainer .retry-btn:hover,
+.QuizContainer .result-btn:hover {
+  background-color: var(--darkerRed);
+}
+
+.Web3Ddescription {
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  padding: 10px 20px;
+  box-shadow: 4px 4px 8px -4px var(--grey);
+  width: calc(100% - 60px);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  gap: 0 20px;
+  padding: 0 10px;
+  margin: 20px 0 40px 0;
+}
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+  }
+}
+
+.Web3D .sticker-box {
+  padding-bottom: 10px;
+}
+
+.research-support {
+  width: calc(100% - 30px);
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px 0;
+  pointer-events: all;
+}
+.research-support p {
+  text-align: left;
+}
+.research-support .section-title {
+  text-align: center;
+}
+.research-support .sub-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.research-support .steps ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.research-support .steps ol li {
+  max-width: 600px;
+  margin: 10px auto;
+}
+.research-support .example {
+  text-align: center;
+  margin: 20px 0;
+}
+.research-support .example .example-image {
+  width: calc(100% - 40px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0 10px;
+  padding: 20px;
+}
+.research-support .example .example-image img {
+  max-width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.research-support .download {
+  text-align: center;
+}
+.research-support .download .download-button {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: var(--markerRed);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.research-support .download .download-button:hover {
+  background-color: var(--markerRed);
+}
+
+.FeedBack {
+  width: calc(100% - 30px);
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px 15px;
+  background-color: var(--paper);
+  box-shadow: 0 4px 8px var(--grey);
+}
+.FeedBack .intro-text {
+  margin: 20px 0;
+}
+.FeedBack h2 {
+  text-align: left;
+  display: flex;
+  gap: 0 10px;
+  justify-content: space-between;
+}
+.FeedBack h2 span p {
+  background-color: var(--markerGreen);
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 80%;
+  display: inline-block;
+  white-space: nowrap;
+}
+.FeedBack .question {
+  margin-bottom: 30px;
+}
+.FeedBack .question.error {
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+}
+.FeedBack .question .rating {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 50px;
+}
+.FeedBack .question .rating .rating-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  color: #a3a3a3;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+}
+.FeedBack .question .rating .rating-button.active, .FeedBack .question .rating .rating-button.filled, .FeedBack .question .rating .rating-button.color {
+  color: var(--markerRed);
+}
+.FeedBack .question .rating .rating-button:hover {
+  color: var(--markerRed);
+}
+.FeedBack .question .rating .rating-button span {
+  position: absolute;
+  top: 51%;
+  left: 50.5%;
+  color: #fff;
+  font-size: 12px;
+  transform: translate(-50%, -50%);
+}
+.FeedBack .question .multi-select {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 2列 */
+  grid-auto-rows: auto; /* 行の高さを自動調整 */
+  gap: 10px; /* 要素間の間隔 */
+}
+.FeedBack .question .multi-select label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  grid-column: 1;
+}
+.FeedBack .question .multi-select label input[type=checkbox] {
+  transform: scale(1.2);
+}
+.FeedBack .question .multi-select textarea {
+  width: calc(100% - 20px);
+  min-height: 80px;
+  padding: 5px 10px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  font-size: 14px;
+  grid-column: span 2; /* 横幅を2列分にする */
+  margin: 0 auto;
+  background-color: var(--paper);
+}
+.FeedBack .question .multi-select textarea:focus {
+  border-color: var(--markerGreen);
+  outline: none;
+  box-shadow: 0 0 5px var(--markerGreen);
+}
+@media (max-width: 600px) {
+  .FeedBack .question .multi-select {
+    grid-template-columns: 1fr; /* 横幅が狭い場合は1列に変更 */
+  }
+  .FeedBack .question .multi-select textareas {
+    grid-column: span 1; /* レスポンシブ時は1列分に戻す */
+  }
+}
+.FeedBack .question textarea {
+  width: calc(100% - 20px);
+  min-height: 80px;
+  padding: 5px 10px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  font-size: 14px;
+  margin: 0 auto;
+  background-color: var(--paper);
+}
+.FeedBack .question textarea:focus {
+  border-color: var(--markerGreen);
+  outline: none;
+  box-shadow: 0 0 5px var(--markerGreen);
+}
+.FeedBack .submit {
+  text-align: center;
+}
+.FeedBack .submit button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.FeedBack .submit button:hover {
+  background-color: #218838;
+}
+.FeedBack .submit button:active {
+  background-color: #1e7e34;
+}
+
+.ant-popover-content {
+  font-family: "Yomogi", sans-serif;
+  font-weight: bold !important;
+}
+.ant-popover-content p {
+  font-weight: bold !important;
+}
+.ant-popover-content button {
+  font-family: "Yomogi", sans-serif;
+  font-weight: bold !important;
+}
+
+:where(.css-dev-only-do-not-override-7ny38l).ant-popconfirm .ant-popconfirm-message .ant-popconfirm-title:only-child {
+  font-weight: 700;
+}
+
+.anticon > * {
+  line-height: 1.8em;
+  margin-top: 0.65em;
+}
+
+.ReactModalPortal {
+  pointer-events: all;
+  cursor: pointer;
+  font-family: "Yomogi", sans-serif !important;
+}
+
+.ReactModal__Overlay {
+  z-index: 100000000;
+}
+
+.ReactModal__Content {
+  width: 70dvw !important;
+  height: 60dvh !important;
+}
+.ReactModal__Content .modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-trigger {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.modal-content {
+  margin: 20px 0;
+}
+
+.modal-close-button {
+  padding: 5px 10px;
+  background-color: #ff5e4c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.modal-close-button:hover {
+  background-color: darkred;
+}
+
+.controls {
+  background-color: var(--paper);
+  border: 5px solid var(--markerGreen);
+  width: 120px;
+  border-radius: 10px;
+  padding: 8px 15px;
+  display: flex;
+  position: absolute;
+  top: calc(100% - 5px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 999;
+  cursor: pointer;
+}
+.controls svg {
+  width: 2em;
+  height: 2em;
+  pointer-events: none;
+}
+
+.hakarunIntro {
+  float: right;
+  width: 100px;
+}
+
+.linkRuby {
+  padding: 0 5px;
+  border-bottom: 5px solid var(--markerRed);
+}
+
+.Policy h1 {
+  display: flex;
+  justify-content: center;
+}
+.Policy h2 {
+  font-weight: 1000;
+  font-size: 1.3em;
+}
+
+.errorURL {
+  width: 100dvw;
+  height: 100dvh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Yomogi", sans-serif;
+}
+
+footer .info {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0;
+}
+
+.customModal h1,
+.customModal h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.rubyContainer {
+  max-width: 700px;
+}
+
+.recommendContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px 30px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .recommendContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px 0;
+  }
+}
+
+.verticalText {
+  writing-mode: vertical-rl; /* 縦書き (右から左) */
+  text-orientation: upright; /* 文字を正しい向きに表示 */
+  text-align: center; /* テキストを中央揃え */
+  align-items: center;
+}
+
+mark {
+  background-color: var(--markerGreen);
+}
+
+.ballLabel {
+  background-color: #0056b3;
+}/*# sourceMappingURL=style.css.map */

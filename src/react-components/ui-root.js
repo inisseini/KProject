@@ -350,6 +350,68 @@ class UIRoot extends Component {
         document.querySelector(".rs-base").style.visibility = "hidden";
       }
     });
+
+    this.props.scene.addEventListener("action_toggle_library", () => {
+      const targetElContainer =
+        document.getElementById("environment-root")?.childNodes[1]?.object3D.children[0].children[0];
+      console.log("targetElContainer=", targetElContainer);
+      const target = targetElContainer.children.find(child => child.name === "EdoKeiryou"); //spokeプロジェクトの名前
+      console.log("target=", target);
+      console.log("animation=", target.animations[0]);
+      console.log("animation=", typeof target.animations[0]);
+
+      const ryougaeTenbin = targetElContainer.children.find(child => child.name === "Ryougae_Tenbin");
+      ryougaeTenbin.el.setAttribute("animation-mixer", {});
+      const ryougaeTenbinAnim = target.animations.find(child => child.name === "AnimationryougaeTenbin");
+      ryougaeTenbin.el.components["animation-mixer"].initMixer(ryougaeTenbinAnim);
+
+      //ryougaeTenbin.el.components["animation-mixer"].play();
+      const mixer = ryougaeTenbin.el.components["animation-mixer"];
+      console.log("mixer=", mixer);
+
+      console.log("environment=", document.getElementById("environment-root")?.childNodes[1]?.object3D);
+
+      console.log("ryougaeTenbin.el.object3D=", ryougaeTenbin.el.object3D);
+
+      if (!trueMixer) {
+        trueMixer = new THREE.AnimationMixer(ryougaeTenbin.el.object3D);
+      }
+      const animation = ryougaeTenbin.el.object3D.animations;
+      console.log("trueMixer=", trueMixer, animation);
+      const action = trueMixer.clipAction(animation);
+
+      console.log("action=", action);
+
+      // アクションの設定
+      action.stop();
+      action.reset(); // 再生位置をリセット
+
+      action.setLoop(THREE.LoopOnce); // ループなし
+      action.clampWhenFinished = true; // 再生終了時に最後のフレームで停止
+      action.reset(); // 再生位置をリセット
+
+      // アニメーションを再生
+      action.play();
+
+      // アニメーションループの管理
+      if (!isAnimating) {
+        isAnimating = true; // ループを開始
+        const clock = new THREE.Clock();
+
+        function animate() {
+          if (action?.isRunning()) {
+            requestAnimationFrame(animate);
+            const delta = clock.getDelta(); // 経過時間
+            trueMixer.update(delta); // アニメーションを更新
+          } else {
+            isAnimating = false; // ループを停止
+          }
+        }
+
+        animate(); // アニメーションループを開始
+      }
+    });
+
     this.props.scene.addEventListener("devicechange", () => {
       this.forceUpdate();
     });
