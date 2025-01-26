@@ -22,6 +22,7 @@ export function AvatarSettingsContent({
 }) {
   return (
     <Column as="form" className={styles.content} {...rest}>
+      {/*
       <TextInputField
         disabled={disableDisplayNameInput}
         label={<FormattedMessage id="avatar-settings-content.display-name-label" defaultMessage="Display Name" />}
@@ -46,6 +47,7 @@ export function AvatarSettingsContent({
         onChange={onChangePronouns}
         ref={pronounsInputRef}
       />
+       */}
       <div className={styles.avatarPreviewContainer}>
         {avatarPreview || <div />}
         <Button type="button" preset="basic" onClick={onChangeAvatar}>

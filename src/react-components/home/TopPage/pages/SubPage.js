@@ -56,7 +56,7 @@ export function SubPage(props) {
       {!props.isOpen && (
         <>
           <div className="tag open PC" onClick={() => setMenu()}>
-            <LuMenu />
+            <LuMenu style={{ fontSize: "30px" }} />
             <p className="PC" style={{ fontSize: "10px" }}>
               メニュー
             </p>
@@ -89,7 +89,7 @@ export function SubPage(props) {
       )}
       {props.isOpen && (
         <div className="tag close PC" onClick={() => setMenu()}>
-          <MdOutlineClose />
+          <MdOutlineClose style={{ fontSize: "30px" }} />
           <p className="PC" style={{ fontSize: "10px" }}>
             <TextWithRuby text={"閉じる"} margin={"0 auto"} textAlign="center" />
           </p>

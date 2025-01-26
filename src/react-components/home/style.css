@@ -324,6 +324,7 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: #fff;
   box-shadow: 4px 4px 8px -4px var(--grey);
   outline-offset: -5px;
