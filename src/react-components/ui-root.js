@@ -351,6 +351,9 @@ class UIRoot extends Component {
       }
     });
 
+    let trueMixer = null; // Mixerをグローバルに保持
+    let isAnimating = false;
+
     this.props.scene.addEventListener("action_toggle_library", () => {
       const targetElContainer =
         document.getElementById("environment-root")?.childNodes[1]?.object3D.children[0].children[0];
