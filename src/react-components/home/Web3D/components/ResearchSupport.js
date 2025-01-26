@@ -1,8 +1,8 @@
 import React from "react";
-import howToUse1 from "../../generalAssets/images/matome1.png";
-import howToUse2 from "../../generalAssets/images/matome2.png";
+import howToUse1 from "../../../../assets/images/matome1.png";
+import howToUse2 from "../../../../assets/images/matome2.png";
 import { TextWithRuby } from "./TextWithRuby";
-import researchPDF from "../../generalAssets/images/research.pdf";
+import researchPDF from "../../../../assets/images/research.pdf";
 
 export function ResearchSupport() {
   return (

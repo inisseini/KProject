@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FeedBack } from "./FeedBack";
-import KeiryouHakase from "../../generalAssets/images/keiryou-hakase-goal.png";
+import KeiryouHakase from "../../../../assets/images/keiryou-hakase-goal.png";
 
-import KeiryouHakaseClear from "../../generalAssets/images/keiryou-hakase-clear.png";
-import Quiz1Question from "../assets/image/quiz1-question.png";
-import Quiz1Explanation1 from "../assets/image/quiz1-explanation1.png";
-import Quiz1Explanation2 from "../assets/image/quiz1-explanation2.png";
-import Quiz2Question from "../assets/image/quiz2-question.png";
-import Quiz3Question from "../assets/image/quiz3-question.png";
-import Quiz4Explanation1 from "../assets/image/quiz4-explanation1.png";
-import Quiz10Question from "../assets/image/quiz10-question.png";
+import KeiryouHakaseClear from "../../../../assets/images/keiryou-hakase-clear.png";
+import Quiz1Question from "../../../../assets/images/quiz1-question.png";
+import Quiz1Explanation1 from "../../../../assets/images/quiz1-explanation1.png";
+import Quiz1Explanation2 from "../../../../assets/images/quiz1-explanation2.png";
+import Quiz2Question from "../../../../assets/images/quiz2-question.png";
+import Quiz3Question from "../../../../assets/images/quiz3-question.png";
+import Quiz4Explanation1 from "../../../../assets/images/quiz4-explanation1.png";
+import Quiz10Question from "../../../../assets/images/quiz10-question.png";
 import { TextWithRuby } from "./TextWithRuby";
 
 const allQuestions = [

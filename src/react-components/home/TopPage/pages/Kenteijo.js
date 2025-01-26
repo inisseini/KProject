@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextWithRuby } from "../../Web3D/components/TextWithRuby";
-import hakarun from "../../generalAssets/images/hakarunLogo.png";
+import hakarun from "../../../../assets/images/hakarunLogo.png";
 
 export function Kenteijo() {
   const [activeIndex, setActiveIndex] = useState(0);

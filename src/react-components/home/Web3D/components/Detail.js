@@ -1,3 +1,4 @@
+import React from "react";
 import { ExpandableContent } from "./ExpandableContent";
 import { TextWithRuby } from "./TextWithRuby";
 

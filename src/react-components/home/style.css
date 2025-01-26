@@ -160,8 +160,8 @@ button {
 
 input:-internal-autofill-selected {
   -webkit-appearance: menulist-button;
-     -moz-appearance: menulist-button;
-          appearance: menulist-button;
+  -moz-appearance: menulist-button;
+  appearance: menulist-button;
   background-image: none !important;
   background-color: var(--paper) !important;
   color: fieldtext !important;
@@ -225,7 +225,9 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  background: radial-gradient(circle at 30% 20%, rgba(255, 243, 223, 0.8), transparent 60%), radial-gradient(circle at 70% 80%, rgba(243, 229, 200, 0.6), transparent 70%), linear-gradient(45deg, #f9e8c6 30%, #f7e3b4 70%);
+  background: radial-gradient(circle at 30% 20%, rgba(255, 243, 223, 0.8), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(243, 229, 200, 0.6), transparent 70%),
+    linear-gradient(45deg, #f9e8c6 30%, #f7e3b4 70%);
   background-size: cover; /* 自然な模様に見せる */
   border: 2px solid #d7c8a6; /* ナチュラルな木材の縁色 */
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1); /* 柔らかな影 */
@@ -238,7 +240,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(-45deg, rgba(255, 243, 223, 0.3), rgba(243, 229, 200, 0.3) 10px, rgba(237, 213, 180, 0.3) 20px);
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 243, 223, 0.3),
+    rgba(243, 229, 200, 0.3) 10px,
+    rgba(237, 213, 180, 0.3) 20px
+  );
   opacity: 0.6; /* 木目の透明度 */
   pointer-events: none; /* クリックイベントを無視 */
   z-index: 0; /* 天板の模様を上に配置 */
@@ -333,7 +340,7 @@ table {
 .App .TopPage .section {
   position: relative;
   width: 100%;
-  background-image: url(./TopPage/assets/image/paperWhite.png);
+  background-image: url(./../../assets/images/paperWhite.png);
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */
@@ -414,7 +421,10 @@ table {
     left: 15px;
     color: #fff;
     transform: translate(0, -50%);
-    text-shadow: var(--black) 2px 0px, var(--black) -2px 0px, var(--black) 0px -2px, var(--black) 0px 2px, var(--black) 2px 2px, var(--black) -2px 2px, var(--black) 2px -2px, var(--black) -2px -2px, var(--black) 1px 2px, var(--black) -1px 2px, var(--black) 1px -2px, var(--black) -1px -2px, var(--black) 2px 1px, var(--black) -2px 1px, var(--black) 2px -1px, var(--black) -2px -1px;
+    text-shadow: var(--black) 2px 0px, var(--black) -2px 0px, var(--black) 0px -2px, var(--black) 0px 2px,
+      var(--black) 2px 2px, var(--black) -2px 2px, var(--black) 2px -2px, var(--black) -2px -2px, var(--black) 1px 2px,
+      var(--black) -1px 2px, var(--black) 1px -2px, var(--black) -1px -2px, var(--black) 2px 1px, var(--black) -2px 1px,
+      var(--black) 2px -1px, var(--black) -2px -1px;
   }
 }
 .App .TopPage .section1 .contentsContainer .concept .topImgContainer {
@@ -480,7 +490,7 @@ table {
   top: 0px;
   box-shadow: 4px 4px 8px -4px var(--grey);
   transition: all 1s ease-out;
-  background-image: url(./TopPage/assets/image/paper.png);
+  background-image: url(./../../assets/images/paper.png);
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */
@@ -668,7 +678,7 @@ header,
   grid-template-rows: auto auto; /* 行の高さを自動調整 */
   grid-template-columns: 4fr 1fr 1fr;
   -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   padding: 0px 60px 10px 30px;
 }
 header .item1,
@@ -773,15 +783,15 @@ header .HakaseGoal,
 @keyframes stick-base {
   0% {
     -webkit-clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%, 0 0);
-            clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%, 0 0);
   }
   50% {
     -webkit-clip-path: polygon(calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%, 0 0);
-            clip-path: polygon(calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%, 0 0);
   }
   100% {
     -webkit-clip-path: polygon(calc(100% - 0.5px) 0, 100% 0.5px, 100% 100%, 0 100%, 0 0);
-            clip-path: polygon(calc(100% - 0.5px) 0, 100% 0.5px, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(calc(100% - 0.5px) 0, 100% 0.5px, 100% 100%, 0 100%, 0 0);
   }
 }
 @keyframes stick-edge {
@@ -804,7 +814,7 @@ header .HakaseGoal,
   bottom: 5px;
   left: -5px;
   -webkit-clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-          clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
   content: "";
   width: calc(100% + 10px);
   height: 50%;
@@ -853,7 +863,7 @@ header .HakaseGoal,
   border: 10px solid transparent;
   pointer-events: none;
   -o-border-image: linear-gradient(90deg, var(--markerRed), var(--markerRed), var(--markerRed));
-     border-image: linear-gradient(90deg, var(--markerRed), var(--markerRed), var(--markerRed));
+  border-image: linear-gradient(90deg, var(--markerRed), var(--markerRed), var(--markerRed));
   border-image-slice: 1;
   box-sizing: border-box;
   z-index: 0;
@@ -880,7 +890,7 @@ header .HakaseGoal,
   border: 10px solid transparent;
   pointer-events: none;
   -o-border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
-     border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
+  border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
   border-image-slice: 1;
   box-sizing: border-box;
   z-index: 0;
@@ -890,23 +900,23 @@ header .HakaseGoal,
 @keyframes markerBorder {
   0% {
     -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
-            clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
   }
   25% {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 0%, 0% 0%);
-            clip-path: polygon(0% 0%, 100% 0%, 0% 0%, 0% 0%);
+    clip-path: polygon(0% 0%, 100% 0%, 0% 0%, 0% 0%);
   }
   50% {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%);
   }
   75% {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
   100% {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
 .peelable {
@@ -951,35 +961,35 @@ header .HakaseGoal,
 }
 
 .hakarun1 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun1.png);
+  background-image: url(./../../assets/images/hakarun1.png);
 }
 
 .hakarun2 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun2.png);
+  background-image: url(./../../assets/images/hakarun2.png);
 }
 
 .hakarun3 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun3.png);
+  background-image: url(./../../assets/images/hakarun3.png);
 }
 
 .hakarun4 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun4.png);
+  background-image: url(./../../assets/images/hakarun4.png);
 }
 
 .hakarun5 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun5.png);
+  background-image: url(./../../assets/images/hakarun5.png);
 }
 
 .hakarun6 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun6.png);
+  background-image: url(./../../assets/images/hakarun6.png);
 }
 
 .hakarun7 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun7.png);
+  background-image: url(./../../assets/images/hakarun7.png);
 }
 
 .hakarun8 .sticker-img {
-  background-image: url(./TopPage/assets/image/hakarun8.png);
+  background-image: url(./../../assets/images/hakarun8.png);
 }
 
 .taped {
@@ -1008,7 +1018,13 @@ header .HakaseGoal,
   line-height: 3em;
   position: relative;
   background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(240, 240, 240, 0.921) 0%, rgba(240, 240, 240, 0.921) 85%, var(--markerRed) 85%, var(--markerRed) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(240, 240, 240, 0.921) 0%,
+    rgba(240, 240, 240, 0.921) 85%,
+    var(--markerRed) 85%,
+    var(--markerRed) 100%
+  );
   box-shadow: 5px 4px 4px 0px var(--grey);
   border-radius: 0px;
   pointer-events: all;
@@ -1018,7 +1034,13 @@ header .HakaseGoal,
   font-family: "Yomogi", sans-serif;
 }
 .husen.green {
-  background: linear-gradient(90deg, rgba(240, 240, 240, 0.921) 0%, rgba(240, 240, 240, 0.921) 85%, var(--markerGreen) 85%, var(--markerGreen) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(240, 240, 240, 0.921) 0%,
+    rgba(240, 240, 240, 0.921) 85%,
+    var(--markerGreen) 85%,
+    var(--markerGreen) 100%
+  );
 }
 .husen.center {
   padding-left: 0;
@@ -1038,7 +1060,7 @@ header .HakaseGoal,
   align-items: center;
   text-align: center;
   padding: 5px;
-  background: url(./TopPage/assets/image/right-circle.svg) no-repeat center;
+  background: url(./../../assets/images/right-circle.svg) no-repeat center;
   background-size: contain;
   fill: var(--paper);
 }
@@ -1055,7 +1077,13 @@ header .HakaseGoal,
   line-height: 3em;
   position: relative;
   background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, var(--markerRed) 0, var(--markerRed) 15%, rgba(240, 240, 240, 0.921) 15%, rgba(240, 240, 240, 0.921) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--markerRed) 0,
+    var(--markerRed) 15%,
+    rgba(240, 240, 240, 0.921) 15%,
+    rgba(240, 240, 240, 0.921) 100%
+  );
   box-shadow: -5px 4px 4px 0px var(--grey);
   border-radius: 0px;
   pointer-events: all;
@@ -1064,7 +1092,13 @@ header .HakaseGoal,
   text-align: center;
 }
 .husen-reverse.green {
-  background: linear-gradient(90deg, var(--markerGreen) 0, var(--markerGreen) 15%, rgba(240, 240, 240, 0.921) 15%, rgba(240, 240, 240, 0.921) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--markerGreen) 0,
+    var(--markerGreen) 15%,
+    rgba(240, 240, 240, 0.921) 15%,
+    rgba(240, 240, 240, 0.921) 100%
+  );
 }
 .husen-reverse span {
   position: absolute;
@@ -1080,7 +1114,7 @@ header .HakaseGoal,
   align-items: center;
   text-align: center;
   padding: 5px;
-  background: url(./TopPage/assets/image/right-circle.svg) no-repeat center;
+  background: url(./../../assets/images/right-circle.svg) no-repeat center;
   background-size: contain;
   fill: var(--paper);
   transform: translate(-50%, -50%) scaleX(-1);
@@ -1212,7 +1246,7 @@ footer {
   font-family: "Yomogi", sans-serif;
 }
 footer .section3 {
-  background-image: url(./TopPage/assets/image/paper.png) !important;
+  background-image: url(./../../assets/images/paper.png) !important;
 }
 
 .forUser {
@@ -1271,7 +1305,7 @@ footer .section3 {
   padding: 10px 10px;
   border: 10px solid transparent;
   -o-border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
-     border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
+  border-image: linear-gradient(90deg, var(--markerGreen), var(--markerGreen), var(--markerGreen));
   border-image-slice: 1;
   box-sizing: border-box;
   display: flex;
@@ -1335,7 +1369,7 @@ footer .section3 {
 .Web3D {
   width: calc(100% - 40px);
   position: relative;
-  background-image: url(./TopPage/assets/image/paperWhite.png);
+  background-image: url(./../../assets/images/paperWhite.png);
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */
@@ -1773,7 +1807,9 @@ footer .section3 {
   transition: background-color 0.3s, color 0.3s;
   position: relative;
 }
-.FeedBack .question .rating .rating-button.active, .FeedBack .question .rating .rating-button.filled, .FeedBack .question .rating .rating-button.color {
+.FeedBack .question .rating .rating-button.active,
+.FeedBack .question .rating .rating-button.filled,
+.FeedBack .question .rating .rating-button.color {
   color: var(--markerRed);
 }
 .FeedBack .question .rating .rating-button:hover {
@@ -1801,7 +1837,7 @@ footer .section3 {
   white-space: nowrap;
   grid-column: 1;
 }
-.FeedBack .question .multi-select label input[type=checkbox] {
+.FeedBack .question .multi-select label input[type="checkbox"] {
   transform: scale(1.2);
 }
 .FeedBack .question .multi-select textarea {
@@ -2029,4 +2065,4 @@ mark {
 
 .ballLabel {
   background-color: #0056b3;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

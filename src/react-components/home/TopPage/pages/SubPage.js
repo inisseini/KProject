@@ -2,12 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { LuMenu } from "react-icons/lu";
 import { MdOutlineClose } from "react-icons/md";
-import Logo from "../../generalAssets/images/keiryou logo.png";
-import Clear from "../../generalAssets/images/keiryou-hakase-clear.png";
-import Goal from "../../generalAssets/images/keiryou-hakase-goal.png";
+import Logo from "../../../../assets/images/keiryou logo.png";
+import Clear from "../../../../assets/images/keiryou-hakase-clear.png";
+import Goal from "../../../../assets/images/keiryou-hakase-goal.png";
 import { SubContents } from "../../generalAssets/components/SubContents";
 import { TextWithRuby } from "../../Web3D/components/TextWithRuby";
-import ninnteijou from "../../generalAssets/images/認定状.pdf";
+import ninnteijou from "../../../../assets/images/認定状.pdf";
 
 export function SubPage(props) {
   const setMenu = () => {

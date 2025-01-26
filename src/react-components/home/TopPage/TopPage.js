@@ -1,23 +1,23 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useAnimateOnScroll } from "./hook/useAnimateOnScroll";
-import Logo from "../generalAssets/images/keiryou logo.png";
-import Goal from "../generalAssets/images/keiryou-hakase-goal.png";
-import Clear from "../generalAssets/images/keiryou-hakase-clear.png";
-import topImg1 from "./assets/image/Parts1.png";
-import topImg2 from "./assets/image/Parts2.png";
-import topImg3 from "./assets/image/Parts3.png";
-import topImg4 from "./assets/image/Parts4.png";
-import topImg5 from "./assets/image/Parts5.png";
-import topImg6 from "./assets/image/Parts6.png";
-import topImg7 from "./assets/image/Parts7.png";
-import topImg8 from "./assets/image/Parts8.png";
-import topImg9 from "./assets/image/Parts9.png";
-import topImg10 from "./assets/image/Parts10.png";
-import topImg11 from "./assets/image/Parts11.png";
-import hakarun from "../generalAssets/images/hakarunLogo.png";
-import metaverseThumbnail from "./assets/image/MetaverseImage.png";
-import web3DThumbnail from "./assets/image/WEB3DImage.png";
+import Logo from "../../../assets/images/keiryou logo.png";
+import Goal from "../../../assets/images/keiryou-hakase-goal.png";
+import Clear from "../../../assets/images/keiryou-hakase-clear.png";
+import topImg1 from "../../../assets/images/Parts1.png";
+import topImg2 from "../../../assets/images/Parts2.png";
+import topImg3 from "../../../assets/images/Parts3.png";
+import topImg4 from "../../../assets/images/Parts4.png";
+import topImg5 from "../../../assets/images/Parts5.png";
+import topImg6 from "../../../assets/images/Parts6.png";
+import topImg7 from "../../../assets/images/Parts7.png";
+import topImg8 from "../../../assets/images/Parts8.png";
+import topImg9 from "../../../assets/images/Parts9.png";
+import topImg10 from "../../../assets/images/Parts10.png";
+import topImg11 from "../../../assets/images/Parts11.png";
+import hakarun from "../../../assets/images/hakarunLogo.png";
+import metaverseThumbnail from "../../../assets/images/MetaverseImage.png";
+import web3DThumbnail from "../../../assets/images/WEB3DImage.png";
 import { LuMenu } from "react-icons/lu";
 import { MdOutlineClose } from "react-icons/md";
 import { SubPage } from "./pages/SubPage";
@@ -27,7 +27,7 @@ import { TextWithRuby } from "../Web3D/components/TextWithRuby";
 import { Kenteijo } from "./pages/Kenteijo";
 import { ScrollToSection } from "../generalAssets/components/ScrollToSection";
 import { SubContents } from "../generalAssets/components/SubContents";
-import ninnteijou from "../generalAssets/images/認定状.pdf";
+import ninnteijou from "../../../assets/images/認定状.pdf";
 
 export function TopPage(props) {
   const [currentDate, setCurrentDate] = useState(" / / ");
@@ -97,8 +97,8 @@ export function TopPage(props) {
 
   return (
     <>
+      <SubPage currentDate={currentDate} isOpen={isOpen} setOpen={setOpen} firstView={firstView} setView={setView} />
       <div className="TopPage">
-        <SubPage currentDate={currentDate} isOpen={isOpen} setOpen={setOpen} firstView={firstView} setView={setView} />
         {!isOpen && (
           <div className="tag open MOBILE" onClick={() => setMenu()}>
             <LuMenu />

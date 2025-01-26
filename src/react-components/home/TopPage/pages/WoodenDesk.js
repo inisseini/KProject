@@ -1,7 +1,7 @@
 import React from "react";
-import RyogaeTenbin from "../assets/image/ryougaeSticker.png";
-import Kensyakuki from "../assets/image/kensyakukiSticker.png";
-import Hakarun from "../assets/image/hakarun9.png";
+import RyogaeTenbin from "../../../../assets/images/ryougaeSticker.png";
+import Kensyakuki from "../../../../assets/images/kensyakukiSticker.png";
+import Hakarun from "../../../../assets/images/hakarun9.png";
 
 export function WoodenDesk() {
   return (
