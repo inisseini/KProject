@@ -348,7 +348,7 @@ table {
 .App .TopPage .section {
   position: relative;
   width: 100%;
-  background-image: url("./../../assets/images/paperWhite.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/paperWhite.png");
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */
@@ -498,7 +498,7 @@ table {
   top: 0px;
   box-shadow: 4px 4px 8px -4px var(--grey);
   transition: all 1s ease-out;
-  background-image: url("../../assets/images/paper.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/paper.png");
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */
@@ -969,35 +969,35 @@ header .HakaseGoal,
 }
 
 .hakarun1 .sticker-img {
-  background-image: url("../../assets/images/hakarun1.svg");
+  background-image: url(https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun1.png);
 }
 
 .hakarun2 .sticker-img {
-  background-image: url("../../assets/images/hakarun2.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun2.png");
 }
 
 .hakarun3 .sticker-img {
-  background-image: url("../../assets/images/hakarun3.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun3.png");
 }
 
 .hakarun4 .sticker-img {
-  background-image: url("../../assets/images/hakarun4.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun4.png");
 }
 
 .hakarun5 .sticker-img {
-  background-image: url("../../assets/images/hakarun5.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun5.png");
 }
 
 .hakarun6 .sticker-img {
-  background-image: url("../../assets/images/hakarun6.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun6.png");
 }
 
 .hakarun7 .sticker-img {
-  background-image: url("../../assets/images/hakarun7.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun7.png");
 }
 
 .hakarun8 .sticker-img {
-  background-image: url("../../assets/images/hakarun8.svg");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/hakarun8.png");
 }
 
 .taped {
@@ -1068,7 +1068,7 @@ header .HakaseGoal,
   align-items: center;
   text-align: center;
   padding: 5px;
-  background: url("../../assets/images/right-circle.svg") no-repeat center;
+  background: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/right-circle.svg") no-repeat center;
   background-size: contain;
   fill: var(--paper);
 
@@ -1124,7 +1124,7 @@ header .HakaseGoal,
   align-items: center;
   text-align: center;
   padding: 5px;
-  background: url("../../assets/images/right-circle.svg") no-repeat center;
+  background: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/right-circle.svg") no-repeat center;
   background-size: contain;
   fill: var(--paper);
   transform: translate(-50%, -50%) scaleX(-1);
@@ -1258,7 +1258,7 @@ footer {
   font-family: "Yomogi", serif;
 }
 footer .section3 {
-  background-image: url("../../assets/images/paper.svg") !important;
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/paper.png") !important;
 }
 
 .forUser {
@@ -1383,7 +1383,7 @@ footer .section3 {
 .Web3D {
   width: calc(100% - 40px);
   position: relative;
-  background-image: url("../../assets/images/paperWhite.png");
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/paperWhite.png");
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */

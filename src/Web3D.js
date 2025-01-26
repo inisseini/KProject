@@ -15,7 +15,7 @@ import { Web3D } from "./react-components/home/Web3D/Web3D.js";
 import "./react-components/home/style.css";
 import { WoodenDesk } from "./react-components/home/TopPage/pages/WoodenDesk";
 
-registerTelemetry("/Web3D", "Web3D Page");
+registerTelemetry("/web3D", "Web3D Page");
 
 window.APP = { store };
 

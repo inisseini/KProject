@@ -327,7 +327,7 @@ module.exports = async (env, argv) => {
       discord: path.join(__dirname, "src", "discord.js"),
       cloud: path.join(__dirname, "src", "cloud.js"),
       signin: path.join(__dirname, "src", "signin.js"),
-      Web3D: path.join(__dirname, "src", "Web3D.js"),
+      web3D: path.join(__dirname, "src", "Web3D.js"),
       verify: path.join(__dirname, "src", "verify.js"),
       tokens: path.join(__dirname, "src", "tokens.js"),
       "whats-new": path.join(__dirname, "src", "whats-new.js"),
@@ -367,7 +367,7 @@ module.exports = async (env, argv) => {
           { from: /^\/verify/, to: "/verify.html" },
           { from: /^\/tokens/, to: "/tokens.html" },
           { from: /^\/whats-new/, to: "/whats-new.html" },
-          { from: /^\/Web3D/, to: "/Web3D.html" }
+          { from: /^\/web3D/, to: "/Web3D.html" }
         ]
       },
       setupMiddlewares: (middlewares, { app }) => {

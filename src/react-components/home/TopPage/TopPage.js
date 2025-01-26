@@ -91,7 +91,7 @@ export function TopPage(props) {
     setSelectedNumbers(shuffled.slice(0, 2)); // 最初の2つを取得
   };
 
-  const redirectUrl = new URL("/Web3D", window.location);
+  const redirectUrl = new URL("/web3D", window.location);
 
   return (
     <>
@@ -286,7 +286,6 @@ export function TopPage(props) {
             </div>
             <br />
 
-            <div className="sticker" style={{ backgroundImage: { hakarun } }}></div>
             <div className="ruby fm" style={{ marginTop: "0.8em" }}>
               <TextWithRuby
                 text={
