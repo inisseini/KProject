@@ -285,6 +285,8 @@ export function TopPage(props) {
               <div className={`sticker hakarun${selectedNumbers[1]}`}></div>
             </div>
             <br />
+
+            <div className="sticker" style={{ backgroundImage: { hakarun } }}></div>
             <div className="ruby fm" style={{ marginTop: "0.8em" }}>
               <TextWithRuby
                 text={

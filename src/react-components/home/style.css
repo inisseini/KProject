@@ -348,7 +348,7 @@ table {
 .App .TopPage .section {
   position: relative;
   width: 100%;
-  background-image: url("../../assets/images/paperWhite.svg");
+  background-image: url("./../../assets/images/paperWhite.svg");
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */
