@@ -286,7 +286,7 @@ table {
 
 @font-face {
   font-family: "Yomogi";
-  src: url(./generalAssets/fonts/Yomogi-Regular.ttf) format(truetype);
+  src: url(../../assets/fonts/Yomogi-Regular.ttf) format(truetype);
 }
 .App {
   width: 100%;
