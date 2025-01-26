@@ -5,15 +5,13 @@ import { Web3D } from "./Web3D/Web3D";
 import { WoodenDesk } from "./TopPage/pages/WoodenDesk";
 
 export function HomePage() {
+  console.log("homepage");
+  console.log(window.location);
+
   return (
     <>
       <div className="App">
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={TopPage} />
-            <Route path="/Web3D" component={Web3D} />
-          </Switch>
-        </BrowserRouter>
+        <TopPage />
       </div>
 
       <WoodenDesk />

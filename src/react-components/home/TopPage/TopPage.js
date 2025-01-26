@@ -91,6 +91,8 @@ export function TopPage(props) {
     setSelectedNumbers(shuffled.slice(0, 2)); // 最初の2つを取得
   };
 
+  const redirectUrl = new URL("/Web3D", window.location);
+
   return (
     <>
       <SubPage currentDate={currentDate} isOpen={isOpen} setOpen={setOpen} firstView={firstView} setView={setView} />
@@ -234,9 +236,9 @@ export function TopPage(props) {
                   <div
                     className="husen animatedItem horizon"
                     style={{ margin: "0 auto" }}
-                    onClick={() => (window.location.href = "/Web3D")}
+                    onClick={() => (window.location = redirectUrl)}
                   >
-                    <a href="/Web3D">こちらをクリック</a>
+                    こちらをクリック
                     <span></span>
                   </div>
                 </div>
