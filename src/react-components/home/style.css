@@ -218,6 +218,16 @@ body {
   line-height: 1.8em;
 }
 
+.tag {
+  box-sizing: content-box !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: content-box;
+}
+
 .wooden-desk {
   width: 100dvw;
   height: 100%;
@@ -961,35 +971,35 @@ header .HakaseGoal,
 }
 
 .hakarun1 .sticker-img {
-  background-image: url(./../../assets/images/hakarun1.png);
+  background-image: url(../../assets/images/hakarun1.svg);
 }
 
 .hakarun2 .sticker-img {
-  background-image: url(./../../assets/images/hakarun2.png);
+  background-image: url(../../assets/images/hakarun2.png);
 }
 
 .hakarun3 .sticker-img {
-  background-image: url(./../../assets/images/hakarun3.png);
+  background-image: url(../../assets/images/hakarun3.png);
 }
 
 .hakarun4 .sticker-img {
-  background-image: url(./../../assets/images/hakarun4.png);
+  background-image: url(../../assets/images/hakarun4.png);
 }
 
 .hakarun5 .sticker-img {
-  background-image: url(./../../assets/images/hakarun5.png);
+  background-image: url(../../assets/images/hakarun5.png);
 }
 
 .hakarun6 .sticker-img {
-  background-image: url(./../../assets/images/hakarun6.png);
+  background-image: url(../../assets/images/hakarun6.png);
 }
 
 .hakarun7 .sticker-img {
-  background-image: url(./../../assets/images/hakarun7.png);
+  background-image: url(../../assets/images/hakarun7.png);
 }
 
 .hakarun8 .sticker-img {
-  background-image: url(./../../assets/images/hakarun8.png);
+  background-image: url(../../assets/images/hakarun8.png);
 }
 
 .taped {
@@ -1063,6 +1073,8 @@ header .HakaseGoal,
   background: url(./../../assets/images/right-circle.svg) no-repeat center;
   background-size: contain;
   fill: var(--paper);
+
+  box-sizing: content-box;
 }
 .husen.bottom span {
   transform: translate(50%, -50%) rotate(90deg);
@@ -1118,6 +1130,8 @@ header .HakaseGoal,
   background-size: contain;
   fill: var(--paper);
   transform: translate(-50%, -50%) scaleX(-1);
+
+  box-sizing: content-box;
 }
 
 @keyframes flyIn {
@@ -1324,6 +1338,7 @@ footer .section3 {
 .answerPane {
   width: 50%;
   overflow-y: auto;
+  aspect-ratio: 1.5/1;
 }
 .answerPane p {
   white-space: wrap;
@@ -1364,12 +1379,13 @@ footer .section3 {
   .answerPane {
     width: 100%;
     overflow-y: auto;
+    aspect-ratio: 1/1.2;
   }
 }
 .Web3D {
   width: calc(100% - 40px);
   position: relative;
-  background-image: url(./../../assets/images/paperWhite.png);
+  background-image: url(../../assets/images/paperWhite.png);
   background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
   background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
   background-position: center, 8px 0; /* 罫線の位置を調整 */

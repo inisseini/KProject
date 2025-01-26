@@ -105,8 +105,6 @@ export function Web3D(props) {
     // 日付をステートにセット
     setCurrentDate(formattedDate);
 
-    {
-      /**
     if (!stickerInit) {
       window.Sticker.init(".sticker", {
         hover: true, // マウスホバーで効果を発動
@@ -114,7 +112,6 @@ export function Web3D(props) {
         perspective: 1000 // 3D効果の深さ
       });
       setStickerInit(true);
-    } */
     }
 
     const hash = window.location.hash;

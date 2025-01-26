@@ -56,8 +56,6 @@ export function TopPage(props) {
     // 日付をステートにセット
     setCurrentDate(formattedDate);
 
-    {
-      /** 
     if (!stickerInit) {
       window.Sticker.init(".sticker", {
         hover: true, // マウスホバーで効果を発動
@@ -65,8 +63,6 @@ export function TopPage(props) {
         perspective: 1000 // 3D効果の深さ
       });
       setStickerInit(true);
-    }
-*/
     }
     const hash = window.location.hash;
     if (hash !== "" && hash.startsWith("#")) {
