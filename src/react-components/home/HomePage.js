@@ -1,5 +1,3 @@
-{
-  /*
 import React from "react";
 import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import { TopPage } from "./TopPage/TopPage";
@@ -20,10 +18,10 @@ export function HomePage() {
     </>
   );
 }
-   */
-}
 
-import React, { useContext, useEffect } from "react";
+{
+  /*
+  import React, { useContext, useEffect } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import classNames from "classnames";
 import configs from "../../utils/configs";
@@ -212,4 +210,7 @@ export function HomePage() {
       ) : null}
     </PageContainer>
   );
+}
+
+  */
 }
