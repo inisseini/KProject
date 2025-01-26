@@ -24,7 +24,7 @@ export function HomePage() {
 }
 
 import React, { useContext, useEffect } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessagse, useIntl } from "react-intl";
 import classNames from "classnames";
 import configs from "../../utils/configs";
 import { CreateRoomButton } from "./CreateRoomButton";
