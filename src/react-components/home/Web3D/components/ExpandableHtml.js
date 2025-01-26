@@ -1,23 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useThree } from '@react-three/fiber';
-import * as THREE from 'three';
-import {
-  CSS2DRenderer,
-  CSS2DObject,
-} from 'three/examples/jsm/renderers/CSS2DRenderer';
-import { Popconfirm } from 'antd';
-import ReactDOM from 'react-dom/client';
-import TextWithRuby from './TextWithRuby';
+import React, { useEffect, useRef, useState } from "react";
+import { useThree } from "@react-three/fiber";
+import * as THREE from "three";
+import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer";
+import { Popconfirm } from "antd";
+import ReactDOM from "react-dom/client";
+import { TextWithRuby } from "./TextWithRuby";
 
-const ExpandableHtml = ({
+export function ExpandableHtml({
   position = [0, 0, 0],
-  sphereColor = '#ffa096',
-  initialText = 'クリック',
-  longText = '説明文です。',
+  sphereColor = "#ffa096",
+  initialText = "クリック",
+  longText = "説明文です。",
   confirmFunction,
   occludeObjects = [],
-  distanceFactor = 10,
-}) => {
+  distanceFactor = 10
+}) {
   const meshRef = useRef();
   const labelRef = useRef();
   const raycasterRef = useRef(new THREE.Raycaster());
@@ -28,27 +25,21 @@ const ExpandableHtml = ({
   useEffect(() => {
     // CSS2DRendererの設定
     const labelRenderer = new CSS2DRenderer();
-    labelRenderer.setSize(
-      gl.domElement.clientWidth,
-      gl.domElement.clientHeight
-    );
-    labelRenderer.domElement.style.position = 'absolute';
-    labelRenderer.domElement.style.top = '0';
-    labelRenderer.domElement.style.pointerEvents = 'none';
+    labelRenderer.setSize(gl.domElement.clientWidth, gl.domElement.clientHeight);
+    labelRenderer.domElement.style.position = "absolute";
+    labelRenderer.domElement.style.top = "0";
+    labelRenderer.domElement.style.pointerEvents = "none";
     gl.domElement.parentNode.appendChild(labelRenderer.domElement);
 
     const resizeHandler = () => {
-      labelRenderer.setSize(
-        gl.domElement.clientWidth,
-        gl.domElement.clientHeight
-      );
+      labelRenderer.setSize(gl.domElement.clientWidth, gl.domElement.clientHeight);
     };
-    window.addEventListener('resize', resizeHandler);
+    window.addEventListener("resize", resizeHandler);
 
     labelRef.current = labelRenderer;
 
     return () => {
-      window.removeEventListener('resize', resizeHandler);
+      window.removeEventListener("resize", resizeHandler);
       labelRenderer.domElement.remove();
       labelRenderer.dispose();
     };
@@ -58,16 +49,16 @@ const ExpandableHtml = ({
     if (!meshRef.current) return;
 
     // ラベルの作成
-    const div = document.createElement('div');
-    div.className = 'label';
-    div.style.color = '#000';
-    div.style.padding = '5px';
-    div.style.borderRadius = '5px';
-    div.style.textAlign = 'center';
-    div.style.fontSize = '12px';
+    const div = document.createElement("div");
+    div.className = "label";
+    div.style.color = "#000";
+    div.style.padding = "5px";
+    div.style.borderRadius = "5px";
+    div.style.textAlign = "center";
+    div.style.fontSize = "12px";
 
     // AntdのPopconfirmを組み込む
-    const popConfirmWrapper = document.createElement('div');
+    const popConfirmWrapper = document.createElement("div");
     div.appendChild(popConfirmWrapper);
 
     const handleConfirm = () => {
@@ -85,14 +76,11 @@ const ExpandableHtml = ({
         title={longText}
         onConfirm={handleConfirm}
         onCancel={handleCancel}
-        okText={<TextWithRuby text={'動かす'} />}
-        cancelText={<TextWithRuby text={'閉じる'} />}
+        okText={<TextWithRuby text={"動かす"} />}
+        cancelText={<TextWithRuby text={"閉じる"} />}
         open={isPopConfirmVisible}
       >
-        <div
-          style={{ cursor: 'pointer' }}
-          onClick={() => setIsPopConfirmVisible(true)}
-        >
+        <div style={{ cursor: "pointer" }} onClick={() => setIsPopConfirmVisible(true)}>
           {initialText}
         </div>
       </Popconfirm>
@@ -114,20 +102,13 @@ const ExpandableHtml = ({
 
       const raycaster = raycasterRef.current;
       const origin = camera.position;
-      const direction = new THREE.Vector3()
-        .copy(meshRef.current.position)
-        .sub(camera.position)
-        .normalize();
+      const direction = new THREE.Vector3().copy(meshRef.current.position).sub(camera.position).normalize();
 
       raycaster.set(origin, direction);
       const intersects = raycaster.intersectObjects(occludeObjects, true);
 
       // ラベルの表示・非表示を更新
-      if (
-        intersects.length > 0 &&
-        intersects[0].distance <
-          camera.position.distanceTo(meshRef.current.position)
-      ) {
+      if (intersects.length > 0 && intersects[0].distance < camera.position.distanceTo(meshRef.current.position)) {
         setIsPopConfirmVisible(false);
         setIsVisible(false);
       } else {
@@ -159,15 +140,9 @@ const ExpandableHtml = ({
   }, [camera, gl, occludeObjects, scene, distanceFactor]);
 
   return (
-    <mesh
-      ref={meshRef}
-      position={position}
-      onPointerDown={() => setIsPopConfirmVisible(true)}
-    >
+    <mesh ref={meshRef} position={position} onPointerDown={() => setIsPopConfirmVisible(true)}>
       <sphereGeometry args={[0.4, 32, 32]} />
       <meshBasicMaterial color={sphereColor} />
     </mesh>
   );
-};
-
-export default ExpandableHtml;
+}

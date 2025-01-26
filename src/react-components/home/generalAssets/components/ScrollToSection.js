@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const ScrollToSection = ({ offset = 0 }) => {
+export function ScrollToSection({ offset = 0 }) {
   // セクションの頭にスクロールする関数
-  const scrollToSectionTop = (sectionId) => {
+  const scrollToSectionTop = sectionId => {
     const target = document.getElementById(sectionId);
     if (target) {
       const elementPosition = target.offsetTop;
@@ -10,13 +10,13 @@ const ScrollToSection = ({ offset = 0 }) => {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth', // スムーズなスクロール
+        behavior: "smooth" // スムーズなスクロール
       });
     }
   };
 
   // セクションを超える位置までスクロールする関数
-  const scrollPastSection = (sectionId) => {
+  const scrollPastSection = sectionId => {
     const target = document.getElementById(sectionId);
     if (target) {
       const elementPosition = target.offsetTop + target.offsetHeight; // セクションの下端位置
@@ -24,12 +24,10 @@ const ScrollToSection = ({ offset = 0 }) => {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth', // スムーズなスクロール
+        behavior: "smooth" // スムーズなスクロール
       });
     }
   };
 
   return { scrollToSectionTop, scrollPastSection }; // 両方の関数を返す
-};
-
-export default ScrollToSection;
+}

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import Stats from 'three/examples/jsm/libs/stats.module.js';
+import React, { useEffect, useRef } from "react";
+import Stats from "three/examples/jsm/libs/stats.module.js";
 
-const StatsComponent = ({ position = 'right', topOffset = 0 }) => {
+export function StatsComponent({ position = "right", topOffset = 0 }) {
   // DOM要素を追加するための参照
   const statsRef = useRef();
 
@@ -22,12 +22,8 @@ const StatsComponent = ({ position = 'right', topOffset = 0 }) => {
 
     // パネルの位置を調整
     statsFPS.dom.style.cssText = `position:absolute;top:${topOffset}px;${position}:20px;`;
-    statsMS.dom.style.cssText = `position:absolute;top:${
-      topOffset + 50
-    }px;${position}:20px;`;
-    statsMB.dom.style.cssText = `position:absolute;top:${
-      topOffset + 100
-    }px;${position}:20px;`;
+    statsMS.dom.style.cssText = `position:absolute;top:${topOffset + 50}px;${position}:20px;`;
+    statsMB.dom.style.cssText = `position:absolute;top:${topOffset + 100}px;${position}:20px;`;
 
     // アニメーションループ
     const animate = () => {
@@ -51,8 +47,6 @@ const StatsComponent = ({ position = 'right', topOffset = 0 }) => {
 
   return (
     // Statsを追加するコンテナ
-    <div ref={statsRef} style={{ position: 'relative' }} />
+    <div ref={statsRef} style={{ position: "relative" }} />
   );
-};
-
-export default StatsComponent;
+}

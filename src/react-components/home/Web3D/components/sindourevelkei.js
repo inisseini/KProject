@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, Suspense } from 'react';
-import { useFrame, useLoader, enxtend } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import * as THREE from 'three';
-import path from '../assets/glb/Ryougae_Tenbin.glb';
-import ExpandableHtml from './ExpandableHtml';
-import TextWithRuby from './TextWithRuby';
+import React, { useEffect, useRef, Suspense } from "react";
+import { useFrame, useLoader, enxtend } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import * as THREE from "three";
+import path from "../assets/glb/Ryougae_Tenbin.glb";
+import { ExpandableHtml } from "./ExpandableHtml";
+import { TextWithRuby } from "./TextWithRuby";
 
-const ModelGLB = () => {
+export function ModelGLB() {
   const modelRef = useRef();
   const mixerRef = useRef();
   const actionsRef = useRef();
@@ -26,8 +26,8 @@ const ModelGLB = () => {
   }, [gltf]);
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'p' || event.key === 'P') {
+    const handleKeyDown = event => {
+      if (event.key === "p" || event.key === "P") {
         if (actionsRef.current) {
           actionsRef.current.reset();
           actionsRef.current.play();
@@ -35,10 +35,10 @@ const ModelGLB = () => {
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -57,21 +57,16 @@ const ModelGLB = () => {
     <>
       <ExpandableHtml
         position={[0, 2, -1]}
-        sphereColor='red'
-        initialText='クリック'
+        sphereColor="red"
+        initialText="クリック"
         occlude={[]} // occlusion チェックを無効化して表示確認
-        longText={<TextWithRuby text={'テスト用のテキストです。'} />}
+        longText={<TextWithRuby text={"テスト用のテキストです。"} />}
         confirmFunction={() => playAnimation()}
       />
-      <primitive
-        scale={[6, 6, 6]}
-        position={[0, -3.5, -2.5]}
-        object={gltf.scene}
-        ref={modelRef}
-      />
+      <primitive scale={[6, 6, 6]} position={[0, -3.5, -2.5]} object={gltf.scene} ref={modelRef} />
     </>
   );
-};
+}
 
 const Model = () => {
   return (
@@ -80,5 +75,3 @@ const Model = () => {
     </Suspense>
   );
 };
-
-export default Model;
