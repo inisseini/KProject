@@ -284,10 +284,6 @@ table {
   border-spacing: 0;
 }
 
-@font-face {
-  font-family: "Yomogi";
-  src: url(../../assets/fonts/Yomogi-Regular.ttf) format(truetype);
-}
 .App {
   width: 100%;
   max-width: 1000px;
@@ -378,7 +374,7 @@ table {
   justify-content: space-around;
 }
 .App .TopPage .section1 .contentsContainer {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   width: calc(100% - 20px);
   flex-shrink: 0;
   flex-grow: 1;
@@ -566,7 +562,7 @@ table {
   box-shadow: 4px 4px 8px -4px var(--grey);
   outline-offset: -10px;
   left: calc(100% - 10px);
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
 }
 .App .SubPage .tag p {
   width: 100%;
@@ -716,7 +712,7 @@ header .item4,
 }
 header .Logo,
 .subHeader .Logo {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   display: flex;
   align-items: center;
   width: 60dvw;
@@ -735,7 +731,7 @@ header .Name span,
 header .Date span,
 .subHeader .Name span,
 .subHeader .Date span {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   flex-grow: 1;
   border-bottom: 1px solid var(--grey);
   text-align: center;
@@ -1042,7 +1038,7 @@ header .HakaseGoal,
   cursor: pointer;
   text-align: left;
   padding-left: 20px;
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
 }
 .husen.green {
   background: linear-gradient(
@@ -1237,7 +1233,7 @@ header .HakaseGoal,
   }
 }
 .text {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   padding: 0 15px;
 }
 
@@ -1258,7 +1254,7 @@ header .HakaseGoal,
 }
 
 footer {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
 }
 footer .section3 {
   background-image: url(./../../assets/images/paper.svg) !important;
@@ -1276,7 +1272,7 @@ footer .section3 {
 
 .menuContainer {
   margin-bottom: 80px;
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
 }
 
 .contactForm {
@@ -1288,7 +1284,7 @@ footer .section3 {
   padding: 0.9em;
   background-color: var(--stickerGreen);
   margin: 60px auto;
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   pointer-events: all;
   display: flex;
   align-items: center;
@@ -1302,12 +1298,12 @@ footer .section3 {
   margin-top: 0.5em;
 }
 .contactForm input {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
 }
 
 .FAQ {
   pointer-events: all;
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   pointer-events: all;
 }
 
@@ -1392,7 +1388,7 @@ footer .section3 {
   background-position: center, 8px 0; /* 罫線の位置を調整 */
   background-blend-mode: multiply; /* 紙と罫線を自然に重ねる */
   padding: 0px 0;
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   margin: 0 auto;
 }
 @media (max-width: 768px) {
@@ -1918,14 +1914,14 @@ footer .section3 {
 }
 
 .ant-popover-content {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   font-weight: bold !important;
 }
 .ant-popover-content p {
   font-weight: bold !important;
 }
 .ant-popover-content button {
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
   font-weight: bold !important;
 }
 
@@ -2033,7 +2029,7 @@ footer .section3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Yomogi";
+  font-family: "Yomogi", serif;
 }
 
 footer .info {
