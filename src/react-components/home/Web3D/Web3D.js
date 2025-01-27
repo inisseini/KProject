@@ -121,7 +121,12 @@ export function Web3D(props) {
 
     const hash = window.location.hash;
     if (hash !== "" && hash.startsWith("#")) {
-      scrollToSectionTop(hash.slice(1));
+      const path = hash.slice(1);
+      if (path === "contactAndFeedback") {
+        document.getElementById("feedbackContainer")?.click();
+      } else {
+        scrollToSectionTop(hash.slice(1));
+      }
     }
   }, []);
 

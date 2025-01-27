@@ -70,7 +70,7 @@ export function TopPage(props) {
 
     if (hash !== "" && hash.startsWith("#")) {
       const path = hash.slice(1);
-      if (path === "feedback") {
+      if (path === "contactAndFeedback") {
         document.getElementById("feedbackContainer")?.click();
       } else {
         scrollToSectionTop(hash.slice(1));
