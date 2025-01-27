@@ -417,7 +417,7 @@ class UIRoot extends Component {
 
     this.props.scene.addEventListener("action_feedback", () => {
       if (!JSON.parse(localStorage.getItem("getFeedback"))) {
-        window.location.href = "https://keiryomuseum.metro.tokyo.lg.jp#contactAndFeedback";
+        window.location.href = "https://keiryomuseum.metro.tokyo.lg.jp#feedback";
       } else {
         alert("すでにご回答いただいております。ご協力ありがとうございました。");
       }
