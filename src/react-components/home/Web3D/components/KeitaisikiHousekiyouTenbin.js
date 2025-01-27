@@ -2,7 +2,7 @@ import React, { useEffect, useRef, Suspense } from "react";
 import { useFrame, useLoader, enxtend } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
-import path from "../assets/glb/KeitaisikiHousekiyouTenbin.glb";
+import path from "../../../../assets/models/KeitaisikiHousekiyouTenbin.glb";
 import { ExpandableHtml } from "./ExpandableHtml";
 import { TextWithRuby } from "./TextWithRuby";
 

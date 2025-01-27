@@ -2,7 +2,7 @@ import React, { useEffect, useRef, Suspense } from "react";
 import { useFrame, useLoader, enxtend } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
-import path from "../assets/glb/Ukihyou_Animation.glb";
+import path from "../../../../assets/models/Ukihyou_Animation.glb";
 import { ExpandableHtml } from "./ExpandableHtml";
 import { TextWithRuby } from "./TextWithRuby";
 
