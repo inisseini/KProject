@@ -67,7 +67,7 @@ export function SubPage(props) {
               className="tag tagToMetaverse PC verticalText"
               onClick={() =>
                 (window.location.href =
-                  "https://keiryomuseum.metro.tokyo.lg.jp/crh2VVj/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0%E3%80%80%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%86%E9%A4%A8")
+                  "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8")
               }
             >
               <p className="PC" style={{ fontSize: "15px" }}>
@@ -75,13 +75,13 @@ export function SubPage(props) {
               </p>
             </div>
 
-            <div className="tag tagToWeb3D PC verticalText" onClick={() => handleNavigate("/Web3D")}>
+            <div className="tag tagToWeb3D PC verticalText" onClick={() => handleNavigate("/web3d")}>
               <p className="PC" style={{ fontSize: "15px" }}>
                 <span style={{ marginBottom: "0.3em" }}>ウ</span>
                 <span style={{ marginBottom: "-0.2em" }}>ェ</span>ブサイト
               </p>
             </div>
-            <div className="tag tagToQuiz PC verticalText" onClick={() => handleNavigate("/Web3D#QuizAnchor")}>
+            <div className="tag tagToQuiz PC verticalText" onClick={() => handleNavigate("/web3d#QuizAnchor")}>
               <p className="PC" style={{ fontSize: "15px" }}>
                 クイズ
               </p>

@@ -72,7 +72,7 @@ export function SubContents(props) {
           <li
             className="husen bottom"
             onClick={() => {
-              handleNavigate("/Web3D#Web3DAnchor");
+              handleNavigate("/web3d#Web3DAnchor");
             }}
           >
             <TextWithRuby text={"計量器を動かしてみよう！"} />
@@ -81,7 +81,7 @@ export function SubContents(props) {
           <li
             className="husen bottom"
             onClick={() => {
-              handleNavigate("/Web3D#QuizAnchor");
+              handleNavigate("/web3d#QuizAnchor");
             }}
           >
             <TextWithRuby text={"クイズに挑戦しよう！"} />
@@ -90,7 +90,7 @@ export function SubContents(props) {
           <li
             className="husen green bottom"
             onClick={() => {
-              handleNavigate("/Web3D#SupportAnchor");
+              handleNavigate("/web3d#SupportAnchor");
             }}
           >
             <TextWithRuby text={"まとめ用紙を活用しよう！"} />
@@ -103,7 +103,7 @@ export function SubContents(props) {
             className="husen "
             onClick={() => {
               window.location.href =
-                "https://keiryomuseum.metro.tokyo.lg.jp/crh2VVj/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0%E3%80%80%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%86%E9%A4%A8";
+                "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8";
             }}
           >
             <TextWithRuby text={"メタバースで江戸時代体験"} />

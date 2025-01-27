@@ -2,11 +2,11 @@ import React, { useEffect, useRef, Suspense } from "react";
 import { useFrame, useLoader, enxtend } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
-import path from "../assets/glb/Ryougae_Tenbin.glb";
+import path from "../assets/glb/KeitaisikiHousekiyouTenbin.glb";
 import { ExpandableHtml } from "./ExpandableHtml";
 import { TextWithRuby } from "./TextWithRuby";
 
-export function ModelGLB() {
+const ModelGLB = () => {
   const modelRef = useRef();
   const mixerRef = useRef();
   const actionsRef = useRef();
@@ -56,22 +56,27 @@ export function ModelGLB() {
   return (
     <>
       <ExpandableHtml
-        position={[0, 2, -1]}
+        position={[1.9, -0.5, -1]}
         sphereColor="red"
         initialText="クリック"
         occlude={[]} // occlusion チェックを無効化して表示確認
-        longText={<TextWithRuby text={"テスト用のテキストです。"} />}
+        longText={
+          <TextWithRuby
+            text={"ケースに入れて持ち歩く事の出来る天びんだよ！\n主に宝石の重さをはかることが出来るんだ！"}
+            anotherRuby={{ 入: "い", 事: "こと" }}
+          />
+        }
         confirmFunction={() => playAnimation()}
       />
-      <primitive scale={[6, 6, 6]} position={[0, -3.5, -2.5]} object={gltf.scene} ref={modelRef} />
+      <primitive scale={[15, 15, 15]} position={[0, -1, 0]} rotation={[0, 0, 0]} object={gltf.scene} ref={modelRef} />
     </>
   );
-}
+};
 
-const Model = () => {
+export function KeitaisikiHousekiyouTenbin() {
   return (
     <Suspense fallback={null}>
       <ModelGLB />
     </Suspense>
   );
-};
+}

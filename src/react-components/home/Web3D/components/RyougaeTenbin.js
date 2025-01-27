@@ -6,7 +6,7 @@ import path from "../assets/glb/Ryougae_Tenbin.glb";
 import { ExpandableHtml } from "./ExpandableHtml";
 import { TextWithRuby } from "./TextWithRuby";
 
-export function ModelGLB() {
+const ModelGLB = () => {
   const modelRef = useRef();
   const mixerRef = useRef();
   const actionsRef = useRef();
@@ -60,18 +60,18 @@ export function ModelGLB() {
         sphereColor="red"
         initialText="クリック"
         occlude={[]} // occlusion チェックを無効化して表示確認
-        longText={<TextWithRuby text={"テスト用のテキストです。"} />}
+        longText={<TextWithRuby text={"左右の皿をつり合わせることで重さをはかることができるよ！"} />}
         confirmFunction={() => playAnimation()}
       />
       <primitive scale={[6, 6, 6]} position={[0, -3.5, -2.5]} object={gltf.scene} ref={modelRef} />
     </>
   );
-}
+};
 
-const Model = () => {
+export function RyougaeTenbin() {
   return (
     <Suspense fallback={null}>
       <ModelGLB />
     </Suspense>
   );
-};
+}

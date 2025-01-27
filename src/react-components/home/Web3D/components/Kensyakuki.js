@@ -2,11 +2,11 @@ import React, { useEffect, useRef, Suspense } from "react";
 import { useFrame, useLoader, enxtend } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
-import path from "../assets/glb/Ryougae_Tenbin.glb";
+import path from "../assets/glb/kensyakuki.glb";
 import { ExpandableHtml } from "./ExpandableHtml";
 import { TextWithRuby } from "./TextWithRuby";
 
-export function ModelGLB() {
+const ModelGLB = () => {
   const modelRef = useRef();
   const mixerRef = useRef();
   const actionsRef = useRef();
@@ -56,22 +56,22 @@ export function ModelGLB() {
   return (
     <>
       <ExpandableHtml
-        position={[0, 2, -1]}
+        position={[1.9, -0.6, -0.8]}
         sphereColor="red"
         initialText="クリック"
         occlude={[]} // occlusion チェックを無効化して表示確認
-        longText={<TextWithRuby text={"テスト用のテキストです。"} />}
+        longText={<TextWithRuby text={"左右の皿をつり合わせることで重さをはかることができるよ！"} />}
         confirmFunction={() => playAnimation()}
       />
-      <primitive scale={[6, 6, 6]} position={[0, -3.5, -2.5]} object={gltf.scene} ref={modelRef} />
+      <primitive scale={[4, 4, 4]} position={[0, -4, 0]} rotation={[0, 0, 0]} object={gltf.scene} ref={modelRef} />
     </>
   );
-}
+};
 
-const Model = () => {
+export function Kensyakuki() {
   return (
     <Suspense fallback={null}>
       <ModelGLB />
     </Suspense>
   );
-};
+}

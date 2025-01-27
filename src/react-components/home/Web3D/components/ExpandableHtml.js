@@ -40,8 +40,12 @@ export function ExpandableHtml({
 
     return () => {
       window.removeEventListener("resize", resizeHandler);
-      labelRenderer.domElement.remove();
-      labelRenderer.dispose();
+      if (labelRenderer.domElement) {
+        labelRenderer.domElement.remove();
+      }
+      if (labelRenderer.dispose) {
+        labelRenderer.dispose();
+      }
     };
   }, [gl]);
 
@@ -91,7 +95,9 @@ export function ExpandableHtml({
     meshRef.current.add(labelObject);
 
     return () => {
-      meshRef.current.remove(labelObject);
+      if (meshRef.current) {
+        meshRef.current.remove(labelObject);
+      }
       root.unmount();
     };
   }, [initialText, longText, confirmFunction, isPopConfirmVisible]);
@@ -142,7 +148,7 @@ export function ExpandableHtml({
   return (
     <mesh ref={meshRef} position={position} onPointerDown={() => setIsPopConfirmVisible(true)}>
       <sphereGeometry args={[0.4, 32, 32]} />
-      <meshBasicMaterial color={sphereColor} />
+      <meshBasicMaterial color="#ffa096" />
     </mesh>
   );
 }

@@ -91,7 +91,7 @@ export function TopPage(props) {
     setSelectedNumbers(shuffled.slice(0, 2)); // 最初の2つを取得
   };
 
-  const redirectUrl = new URL("/web3D", window.location);
+  const redirectUrl = new URL("/web3d", window.location);
 
   return (
     <>
@@ -217,7 +217,7 @@ export function TopPage(props) {
                     style={{ margin: "0 auto" }}
                     onClick={() =>
                       (window.location.href =
-                        "https://keiryomuseum.metro.tokyo.lg.jp/crh2VVj/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0%E3%80%80%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%86%E9%A4%A8")
+                        "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8")
                     }
                   >
                     こちらをクリック
@@ -351,19 +351,19 @@ export function TopPage(props) {
                   className="husen animatedItem horizon"
                   onClick={() =>
                     (window.location.href =
-                      "https://keiryomuseum.metro.tokyo.lg.jp/crh2VVj/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0%E3%80%80%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%86%E9%A4%A8")
+                      "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8")
                   }
                 >
                   <TextWithRuby text={"①メタバースはこちら"} />
                   <span></span>
                 </div>
-                <div className="husen animatedItem horizon" onClick={() => (window.location.href = "/Web3D")}>
+                <div className="husen animatedItem horizon" onClick={() => (window.location.href = "web3d")}>
                   <TextWithRuby text={"②ウェブサイトはこちら"} />
                   <span></span>
                 </div>
                 <div
                   className="husen animatedItem horizon"
-                  onClick={() => (window.location.href = "/Web3D#QuizAnchor")}
+                  onClick={() => (window.location.href = "/web3d#QuizAnchor")}
                 >
                   <TextWithRuby text={"③クイズはこちら"} />
                   <span></span>
@@ -396,7 +396,7 @@ export function TopPage(props) {
               <div
                 className="husen animatedItem horizon"
                 style={{ margin: "30px auto" }}
-                onClick={() => (window.location.href = "/Web3D#SupportAnchor")}
+                onClick={() => (window.location.href = "/web3d#SupportAnchor")}
               >
                 <TextWithRuby text={"詳細はこちら"} />
                 <span></span>

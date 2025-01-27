@@ -1,10 +1,10 @@
 import React from "react";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import { Suspense, useState, useEffect, useRef } from "react";
-import RyougaeTenbin from "./components/RyougaeTenbin";
-import Bouhakari from "./components/Bouhakari";
-import StatsComponent from "./components/StatsComponent";
-import Ukihyou from "./components/Ukihyou";
+import { RyougaeTenbin } from "./components/RyougaeTenbin";
+import { Bouhakari } from "./components/Bouhakari";
+import { StatsComponent } from "./components/StatsComponent";
+import { Ukihyou } from "./components/Ukihyou";
 import { Detail } from "./components/Detail";
 import { Title } from "./components/Title";
 import { Quiz } from "./components/Quiz";
@@ -15,13 +15,13 @@ import Goal from "../../../assets/images/keiryou-hakase-goal.png";
 import Clear from "../../../assets/images/keiryou-hakase-clear.png";
 import { useAnimateOnScroll } from "../TopPage/hook/useAnimateOnScroll";
 import { TextWithRuby } from "./components/TextWithRuby";
-import Kensyakuki from "./components/Kensyakuki";
-import Kennikou from "./components/Kennikou";
-import Taximetor from "./components/Taximetor";
-import KeitaisikiHousekiyouTenbin from "./components/KeitaisikiHousekiyouTenbin";
-import SitsusikiGusmetor from "./components/SitsusikiGusmetor";
-import Souonkei from "./components/Souonkei";
-import Sindourevelkei from "./components/sindourevelkei";
+import { Kensyakuki } from "./components/Kensyakuki";
+import { Kennikou } from "./components/Kennikou";
+import { Taximetor } from "./components/Taximetor";
+import { KeitaisikiHousekiyouTenbin } from "./components/KeitaisikiHousekiyouTenbin";
+import { SitsusikiGusmetor } from "./components/SitsusikiGusmetor";
+import { Souonkei } from "./components/Souonkei";
+import { Sindourevelkei } from "./components/sindourevelkei";
 import { ScrollToSection } from "../generalAssets/components/ScrollToSection";
 import { CustomModal } from "../generalAssets/components/CustomModal";
 import { MdOutlineTouchApp } from "react-icons/md";
@@ -38,8 +38,13 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 extend({ OrbitControls });
 
-const Controls = () => {
+const Controls = props => {
   const { camera, gl } = useThree();
+  useEffect(() => {
+    camera.position.set(0, 0, 10); // カメラの初期位置
+    camera.lookAt(0, 0, 0); // カメラの向きをリセット
+    camera.updateProjectionMatrix(); // 投影行列を更新
+  }, [props.selectedNum]);
   const controlsRef = useRef();
 
   useFrame(() => {
@@ -359,26 +364,25 @@ export function Web3D(props) {
                 </group>
               </Environment>
               <ambientLight intensity={1.5} />
-              <Suspense fallback={null}>
-                {selectedNum === 1 && <RyougaeTenbin />}
-                {selectedNum === 2 && <Kensyakuki />}
-                {selectedNum === 3 && <Kennikou />}
-                {selectedNum === 4 && <Bouhakari />}
-                {selectedNum === 5 && <Ukihyou />}
-                {selectedNum === 6 && <Taximetor />}
-                {selectedNum === 7 && <KeitaisikiHousekiyouTenbin />}
-                {selectedNum === 8 && <SitsusikiGusmetor />}
-                {selectedNum === 9 && <Souonkei />}
-                {selectedNum === 10 && <Sindourevelkei />}
-              </Suspense>
                */}
-                <ambientLight intensity={10} />
-                <directionalLight position={[5, 10, 5]} intensity={10} />
-                <directionalLight position={[-5, -10, -5]} intensity={0.5} />
-                <directionalLight position={[10, 5, -10]} intensity={0.5} />
+                <Suspense fallback={null}>
+                  {selectedNum === 1 && <RyougaeTenbin />}
+                  {selectedNum === 2 && <Kensyakuki />}
+                  {selectedNum === 3 && <Kennikou />}
+                  {selectedNum === 4 && <Bouhakari />}
+                  {selectedNum === 5 && <Ukihyou />}
+                  {selectedNum === 6 && <Taximetor />}
+                  {selectedNum === 7 && <KeitaisikiHousekiyouTenbin />}
+                  {selectedNum === 8 && <SitsusikiGusmetor />}
+                  {selectedNum === 9 && <Souonkei />}
+                  {selectedNum === 10 && <Sindourevelkei />}
+                </Suspense>
+                <ambientLight intensity={2} />
+                <directionalLight position={[5, 10, 5]} intensity={2} />
+                <directionalLight position={[-5, -10, -5]} intensity={2} />
+                <directionalLight position={[10, 5, -10]} intensity={2} />
                 {/* OrbitControls */}
-                <Controls />
-                <Model />
+                <Controls selectedNum={selectedNum} />
               </Canvas>
 
               <div className="UI-bottom">
