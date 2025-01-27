@@ -1,3 +1,4 @@
+import React from "react";
 export function Policy() {
   return (
     <p className="Policy">

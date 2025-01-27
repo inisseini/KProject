@@ -1,3 +1,4 @@
+import React from "react";
 import { TextWithRuby } from "../../Web3D/components/TextWithRuby";
 
 export function Links() {

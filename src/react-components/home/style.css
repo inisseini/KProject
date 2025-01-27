@@ -345,6 +345,12 @@ table {
   width: 80%;
   margin: 0 auto;
 }
+.tag .mobile {
+  position: fixed;
+  p {
+    font-family: "Yomogi", serif !important;
+  }
+}
 .App .TopPage .section {
   position: relative;
   width: 100%;
@@ -394,6 +400,7 @@ table {
 @media (max-width: 640px) {
   .App .TopPage .section1 .contentsContainer .column {
     flex-direction: column;
+    overflow-y: hidden;
   }
 }
 .App .TopPage .section1 .contentsContainer .column1 {
@@ -405,7 +412,7 @@ table {
 }
 @media (max-width: 640px) {
   .App .TopPage .section1 .contentsContainer .column1 {
-    height: 40dvh;
+    overflow-y: hidden;
   }
 }
 .App .TopPage .section1 .contentsContainer .concept {
@@ -423,12 +430,13 @@ table {
   justify-content: space-around;
 }
 @media (max-width: 640px) {
+  .App .TopPage .section1 .contentsContainer .concept {
+    height: 100%;
+    overflow-y: auto;
+    aspect-ratio: inherit;
+  }
   .App .TopPage .section1 .contentsContainer .concept h1 {
-    position: absolute;
-    top: 50%;
-    left: 15px;
     color: #fff;
-    transform: translate(0, -50%);
     text-shadow: var(--black) 2px 0px, var(--black) -2px 0px, var(--black) 0px -2px, var(--black) 0px 2px,
       var(--black) 2px 2px, var(--black) -2px 2px, var(--black) 2px -2px, var(--black) -2px -2px, var(--black) 1px 2px,
       var(--black) -1px 2px, var(--black) 1px -2px, var(--black) -1px -2px, var(--black) 2px 1px, var(--black) -2px 1px,
@@ -1248,6 +1256,7 @@ header .HakaseGoal,
   margin: 3.6em auto 1.8em auto;
   text-align: center;
   white-space: nowrap;
+  flex-wrap: nowrap;
 }
 .titleContainer h1 {
   position: relative;

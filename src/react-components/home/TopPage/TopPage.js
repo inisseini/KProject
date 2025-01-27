@@ -101,14 +101,14 @@ export function TopPage(props) {
       <div className="TopPage">
         {!isOpen && (
           <div className="tag open MOBILE" onClick={() => setMenu()}>
-            <LuMenu />
-            <p className="fs">メニュー</p>
+            <LuMenu style={{ fontSize: "30px", margin: "0 auto" }} />
+            <p style={{ fontSize: "10px" }}>メニュー</p>
           </div>
         )}
         {isOpen && (
           <div className="tag close MOBILE" onClick={() => setMenu()}>
-            <MdOutlineClose />
-            <p className="">閉じる</p>
+            <MdOutlineClose style={{ fontSize: "30px", margin: "0 auto" }} />
+            <p style={{ fontSize: "10px" }}>閉じる</p>
           </div>
         )}
 
@@ -173,7 +173,9 @@ export function TopPage(props) {
                       className="fs"
                     >
                       <img src={hakarun} alt="はかるん" style={{ width: "150px", maxWidth: "25dvw" }} />
-                      <TextWithRuby text={"東京都計量検定所\n公式キャラクター「はかるん」"} />
+                      <span className="PC">
+                        <TextWithRuby text={"東京都計量検定所\n公式キャラクター「はかるん」"} />
+                      </span>
                     </div>
                   </div>
 
