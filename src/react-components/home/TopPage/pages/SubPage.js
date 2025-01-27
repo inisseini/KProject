@@ -31,7 +31,7 @@ export function SubPage(props) {
 
   return (
     <div className={props.isOpen ? "SubPage open" : props.firstView ? "SubPage" : "SubPage close"}>
-      <div style={{ height: "100%", width: "100%", overflowY: "auto", overflowX: "hidden" }}>
+      <div className="subpageContainer">
         <header>
           <img src={Logo} alt="ロゴ" className="Logo item1 animatedItem vertical" />
 

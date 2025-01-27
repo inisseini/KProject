@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import { TextWithRuby } from "../../Web3D/components/TextWithRuby";
 import { CustomModal } from "./CustomModal";
@@ -8,8 +8,10 @@ import { Policy } from "./Policy";
 import { Links } from "./Links";
 import { RiSurveyLine } from "react-icons/ri";
 import { FeedBack } from "../../Web3D/components/FeedBack";
+import ninnteijou from "../../../../assets/images/認定状.pdf";
 
 export function SubContents(props) {
+  const [isPassed, setIsPassed] = useState(JSON.parse(localStorage.getItem("quizPassed")) || false);
   const triggerRefContact = useRef(null);
   const triggerRefFeedBack = useRef(null);
   const handleControlsClickContact = () => {
@@ -41,6 +43,14 @@ export function SubContents(props) {
   return (
     <div style={{ position: "relative", zIndex: "2" }} className="subContainer">
       <div className="menuContainer fm">
+        {isPassed && (
+          <div className="husen animatedItem horizon" style={{ margin: "0px auto" }}>
+            <a href={ninnteijou} download>
+              <TextWithRuby text={"認定状をダウンロードする"} />
+              <span></span>
+            </a>
+          </div>
+        )}
         <div className="husen animatedItem horizon fs" style={{ margin: "30px auto" }}>
           メニュー
         </div>

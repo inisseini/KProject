@@ -103,35 +103,32 @@ export function TopPage(props) {
 
   return (
     <>
+      {!isOpen && (
+        <div className="fixTag open MOBILE" onClick={() => setMenu()}>
+          <LuMenu style={{ fontSize: "30px", margin: "0 auto" }} />
+        </div>
+      )}
+      {isOpen && (
+        <div className="fixTag close MOBILE" onClick={() => setMenu()}>
+          <MdOutlineClose style={{ fontSize: "30px", margin: "0 auto" }} />
+        </div>
+      )}
       <SubPage currentDate={currentDate} isOpen={isOpen} setOpen={setOpen} firstView={firstView} setView={setView} />
       <div className="TopPage">
-        {!isOpen && (
-          <div className="tag open MOBILE" onClick={() => setMenu()}>
-            <LuMenu style={{ fontSize: "30px", margin: "0 auto" }} />
-            <p style={{ fontSize: "10px" }}>メニュー</p>
-          </div>
-        )}
-        {isOpen && (
-          <div className="tag close MOBILE" onClick={() => setMenu()}>
-            <MdOutlineClose style={{ fontSize: "30px", margin: "0 auto" }} />
-            <p style={{ fontSize: "10px" }}>閉じる</p>
-          </div>
-        )}
-
         <div className="section section1" id="TopAnchor">
           <header>
             <img src={Logo} alt="ロゴ" className="Logo item1 animatedItem vertical" />
 
             {isPassed ? (
               <div className="item4">
-                <img src={Clear} alt="ロゴ" className="HakaseGoal animatedItem vertical PC" />
+                <img src={Clear} alt="ロゴ" className="HakaseGoal animatedItem vertical" />
                 <a href={ninnteijou} download className="husen animatedItem horizon PC">
                   <TextWithRuby text={"認定状をダウンロードする"} />
                   <span></span>
                 </a>
               </div>
             ) : (
-              <img src={Goal} alt="ロゴ" className="HakaseGoal item4 animatedItem vertical PC" />
+              <img src={Goal} alt="ロゴ" className="HakaseGoal item4 animatedItem vertical " />
             )}
             <div className="Name PC item2 fs">
               Name:　<span className="fm">はかるん</span>

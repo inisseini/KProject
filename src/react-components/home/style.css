@@ -211,6 +211,9 @@ h1 {
   font-size: 1.5rem; /* 基準フォントサイズの 150% */
   line-height: 1.8em; /* タイトルとしてバランス良く */
   font-weight: bold; /* 見出し用に太字を推奨 */
+  @media (max-width: 640px) {
+    font-size: 1.3rem;
+  }
 }
 
 body {
@@ -218,7 +221,8 @@ body {
   line-height: 1.8em;
 }
 
-.tag {
+.tag,
+.fixTag {
   box-sizing: content-box !important;
 }
 
@@ -306,12 +310,13 @@ table {
     margin: 0;
   }
 }
-.App .TopPage .tag {
+.fixTag {
   position: fixed;
   top: 20px;
   right: 0px;
-  width: 50px;
-  height: 100px;
+  width: 15%;
+  min-width: 50px;
+  aspect-ratio: 1/1;
   opacity: 1 !important;
   border-radius: 15px 0px 0px 15px;
   pointer-events: all;
@@ -324,24 +329,29 @@ table {
   background-color: #fff;
   box-shadow: 4px 4px 8px -4px var(--grey);
   outline-offset: -5px;
-  z-index: 10;
+  z-index: 100000000000;
+  svg {
+    width: 60%;
+    height: 60%;
+    margin: auto 0;
+  }
 }
 
-.App .TopPage .tag p {
+.fixTag p {
   width: 100%;
   text-align: center;
 }
-.App .TopPage .tag.open {
+.fixTag.open {
   outline: 2px solid var(--markerGreen);
 }
-.App .TopPage .tag.open img {
+.fixTag.open img {
   width: 70%;
   margin: 0 auto;
 }
-.App .TopPage .tag.close {
+.fixTag.close {
   outline: 2px solid var(--markerRed);
 }
-.App .TopPage .tag.close img {
+.fixTag.close img {
   width: 80%;
   margin: 0 auto;
 }
@@ -360,7 +370,7 @@ table {
   background-position: center, 8px 0; /* 罫線の位置を調整 */
   background-blend-mode: multiply; /* 紙と罫線を自然に重ねる */
   z-index: 1;
-  padding: 30px 0;
+  padding: 1.8em 0;
 }
 .App .TopPage .section::after {
   position: absolute;
@@ -492,6 +502,9 @@ table {
   .App .TopPage .section1 .contentsContainer .linkImg img {
     display: none;
   }
+  .App .TopPage .section1 .contentsContainer .linkContainer {
+    margin-top: 1.8em;
+  }
 }
 .App .TopPage .section2 {
   width: 100%;
@@ -540,6 +553,13 @@ table {
 }
 .App .SubPage.open {
   animation: subPageEnter 1s ease forwards;
+}
+.App .SubPage.open .subpageContainer {
+  height: calc(100% - 20px);
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 50px;
 }
 @media (max-width: 640px) {
   .App .SubPage.open {
@@ -696,6 +716,12 @@ header,
   -moz-column-gap: 10px;
   column-gap: 10px;
   padding: 0px 60px 10px 30px;
+  @media (max-width: 640px) {
+    grid-template-areas: "item1 item4";
+    grid-template-columns: 4fr 2fr;
+
+    padding: 20px;
+  }
 }
 header .item1,
 .subHeader .item1 {
@@ -718,6 +744,9 @@ header .item4,
   flex-direction: column;
   align-items: center;
   gap: 10px 0;
+  @media (max-width: 640px) {
+    margin: auto 0 10% 0;
+  }
 }
 header .Logo,
 .subHeader .Logo {
@@ -752,6 +781,9 @@ header .HakaseGoal,
   align-items: center;
   width: 70%;
   transform: rotate(5deg);
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .sticker-box {
@@ -974,6 +1006,20 @@ header .HakaseGoal,
 }
 .sticker .sticker-img.sticker-front {
   background-color: var(--paper);
+}
+
+.hakarun1,
+.hakarun2,
+.hakarun3,
+.hakarun4,
+.hakarun5,
+.hakarun6,
+.hakarun7,
+.hakarun8 {
+  @media (max-width: 640px) {
+    flex-grow: 0;
+    width: 80px;
+  }
 }
 
 .hakarun1 .sticker-img {
@@ -1293,7 +1339,7 @@ footer .section3 {
   border-radius: 5px;
   padding: 0.9em;
   background-color: var(--stickerGreen);
-  margin: 60px 0;
+  margin: 0px 0;
   font-family: "Yomogi", serif;
   pointer-events: all;
   display: flex;
@@ -1357,12 +1403,9 @@ footer .section3 {
   }
 }
 
-.MOBILE {
-  display: none !important;
-}
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .MOBILE {
-    display: inherit !important;
+    display: none;
   }
 }
 
@@ -1373,7 +1416,6 @@ footer .section3 {
 @media (max-width: 640px) {
   .FAQContainer {
     flex-direction: column !important; /* 縦並びに変更 */
-    overflow-x: scroll !important; /* 横スクロール有効化 */
   }
   .FAQBox {
     width: 100%;
@@ -1385,6 +1427,7 @@ footer .section3 {
   }
   .answerPane {
     width: 100%;
+    max-width: 100dvw;
     overflow-y: auto;
     aspect-ratio: 1/1.2;
   }
@@ -2094,4 +2137,10 @@ mark {
   display: flex;
   justify-content: center;
   gap: 0 20px;
+  margin: 1.8em auto;
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+  }
 }

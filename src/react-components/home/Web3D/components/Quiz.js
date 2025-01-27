@@ -11,6 +11,7 @@ import Quiz3Question from "../../../../assets/images/quiz3-question.png";
 import Quiz4Explanation1 from "../../../../assets/images/quiz4-explanation1.png";
 import Quiz10Question from "../../../../assets/images/quiz10-question.png";
 import { TextWithRuby } from "./TextWithRuby";
+import ninnteijou from "../../../../assets/images/認定状.pdf";
 
 const allQuestions = [
   {
@@ -273,6 +274,12 @@ export function Quiz(props) {
                 <TextWithRuby text={"合格です！「計量はかせ」に認定します！"} />
               </p>
               <img src={KeiryouHakaseClear} alt="計量はかせマーク" />
+              <div className="husen animatedItem horizon" style={{ margin: "1.8em auto" }}>
+                <a href={ninnteijou} download>
+                  <TextWithRuby text={"認定状をダウンロードする"} />
+                  <span></span>
+                </a>
+              </div>
             </>
           ) : (
             <>

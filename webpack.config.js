@@ -271,7 +271,7 @@ module.exports = async (env, argv) => {
 
   const host = process.env.HOST_IP || env.localDev || env.remoteDev ? "hubs.local" : "localhost";
 
-  const liveReload = !!process.env.LIVE_RELOAD || false;
+  const liveReload = true; //!!process.env.LIVE_RELOAD || false;
 
   const devServerHeaders = {
     "Access-Control-Allow-Origin": "*"
