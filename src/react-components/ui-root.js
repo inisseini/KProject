@@ -1218,7 +1218,7 @@ class UIRoot extends Component {
           />
         ),
         items: [
-          /*this.state.signedIn
+          this.state.signedIn
             ? {
                 id: "sign-out",
                 label: <FormattedMessage id="more-menu.sign-out" defaultMessage="Sign Out" />,
@@ -1233,7 +1233,7 @@ class UIRoot extends Component {
                 label: <FormattedMessage id="more-menu.sign-in" defaultMessage="Sign In" />,
                 icon: EnterIcon,
                 onClick: () => this.showContextualSignInDialog()
-              },*/
+              },
           canCreateRoom && {
             id: "create-room",
             label: <FormattedMessage id="more-menu.create-room" defaultMessage="Create Room" />,
@@ -1251,7 +1251,6 @@ class UIRoot extends Component {
             onClick: () => this.setSidebar("profile")
           },
           {
-            /*
             id: "favorite-rooms",
             label: <FormattedMessage id="more-menu.favorite-rooms" defaultMessage="Favorite Rooms" />,
             icon: FavoritesIcon,
@@ -1264,7 +1263,6 @@ class UIRoot extends Component {
                 },
                 SignInMessages.favoriteRooms
               )
-          */
           },
           {
             id: "preferences",
@@ -1298,7 +1296,7 @@ class UIRoot extends Component {
               icon: InviteIcon,
               onClick: () => this.props.scene.emit("action_invite")
             },
-          /*this.isFavorited()
+          this.isFavorited()
             ? {
                 id: "unfavorite-room",
                 label: <FormattedMessage id="more-menu.unfavorite-room" defaultMessage="Unfavorite Room" />,
@@ -1310,7 +1308,7 @@ class UIRoot extends Component {
                 label: <FormattedMessage id="more-menu.favorite-room" defaultMessage="Favorite Room" />,
                 icon: StarOutlineIcon,
                 onClick: () => this.toggleFavorited()
-              },*/
+              },
           isModerator &&
             entered && {
               id: "streamer-mode",
