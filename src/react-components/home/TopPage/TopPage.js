@@ -67,8 +67,14 @@ export function TopPage(props) {
       setStickerInit(true);
     }
     const hash = window.location.hash;
+
     if (hash !== "" && hash.startsWith("#")) {
-      scrollToSectionTop(hash.slice(1));
+      const path = hash.slice(1);
+      if (path === "feedback") {
+        document.getElementById("feedbackContainer")?.click();
+      } else {
+        scrollToSectionTop(hash.slice(1));
+      }
     }
 
     generateRandomNumbers();

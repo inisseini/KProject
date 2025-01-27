@@ -415,6 +415,14 @@ class UIRoot extends Component {
       }
     });
 
+    this.props.scene.addEventListener("action_feedback", () => {
+      if (!JSON.parse(localStorage.getItem("getFeedback"))) {
+        window.location.href = "https://keiryomuseum.metro.tokyo.lg.jp#contactAndFeedback";
+      } else {
+        alert("すでにご回答いただいております。ご協力ありがとうございました。");
+      }
+    });
+
     this.props.scene.addEventListener("devicechange", () => {
       this.forceUpdate();
     });

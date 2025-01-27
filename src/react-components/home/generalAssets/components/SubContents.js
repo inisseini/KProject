@@ -6,12 +6,20 @@ import { IoMdMail } from "react-icons/io";
 import { ContactForm } from "../../TopPage/pages/ContactForm";
 import { Policy } from "./Policy";
 import { Links } from "./Links";
+import { RiSurveyLine } from "react-icons/ri";
+import { FeedBack } from "../../Web3D/components/FeedBack";
 
 export function SubContents(props) {
   const triggerRefContact = useRef(null);
+  const triggerRefFeedBack = useRef(null);
   const handleControlsClickContact = () => {
     if (triggerRefContact.current && !document.getElementById("modal")) {
       triggerRefContact.current.click(); // トリガーボタンのクリックを発火
+    }
+  };
+  const handleControlsClickFeedBack = () => {
+    if (triggerRefContact.current && !document.getElementById("modal")) {
+      triggerRefFeedBack.current.click(); // トリガーボタンのクリックを発火
     }
   };
 
@@ -114,12 +122,26 @@ export function SubContents(props) {
 
       <div className="diviner"></div>
 
-      <div className="contactForm animatedItem vertical fm" onClick={() => handleControlsClickContact()}>
-        <IoMdMail />
-        <CustomModal triggerText="お問い合わせはこちら" triggerRef={triggerRefContact}>
-          <ContactForm />
+      <div className="contactAndFeedBack">
+        <div className="contactForm animatedItem vertical fm" onClick={() => handleControlsClickContact()}>
           <IoMdMail />
-        </CustomModal>
+          <CustomModal triggerText="お問い合わせはこちら" triggerRef={triggerRefContact}>
+            <ContactForm />
+          </CustomModal>
+        </div>
+
+        {!JSON.parse(localStorage.getItem("getFeedback")) && (
+          <div
+            className="contactForm animatedItem vertical fm"
+            onClick={() => handleControlsClickFeedBack()}
+            id="feedbackContainer"
+          >
+            <RiSurveyLine />
+            <CustomModal triggerText="アンケートのお願い" triggerRef={triggerRefFeedBack}>
+              <FeedBack />
+            </CustomModal>
+          </div>
+        )}
       </div>
 
       <div className="diviner"></div>

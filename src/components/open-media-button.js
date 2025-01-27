@@ -50,6 +50,11 @@ AFRAME.registerComponent("open-media-button", {
         return;
       }
 
+      if (this.src.indexOf("#feedback") !== -1) {
+        APP.scene.emit("action_feedback");
+        return;
+      }
+
       let hubId;
       if (this.data.onlyOpenLink) {
         await exitImmersive();

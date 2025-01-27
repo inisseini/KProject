@@ -1293,7 +1293,7 @@ footer .section3 {
   border-radius: 5px;
   padding: 0.9em;
   background-color: var(--stickerGreen);
-  margin: 60px auto;
+  margin: 60px 0;
   font-family: "Yomogi", serif;
   pointer-events: all;
   display: flex;
@@ -2089,3 +2089,9 @@ mark {
 .ballLabel {
   background-color: #0056b3;
 } /*# sourceMappingURL=style.css.map */
+
+.contactAndFeedBack {
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+}

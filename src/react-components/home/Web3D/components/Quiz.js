@@ -285,7 +285,7 @@ export function Quiz(props) {
           <button className="retry-btn" onClick={restartQuiz}>
             <TextWithRuby text={"クイズに再挑戦する"} />
           </button>
-          <FeedBack />
+          {!JSON.parse(localStorage.getItem("getFeedback")) && <FeedBack />}
         </div>
       ) : (
         <div className="QuizContainer" ref={scrollRef}>
