@@ -382,7 +382,7 @@ export function FeedBack() {
 
           {/* Submit */}
           <button className="husen" style={{ margin: "0 auto", display: "flex" }} onClick={() => handleSubmit()}>
-            <TextWithRuby text={"送信"} />
+            <TextWithRuby text={"送信"} textAlign="center" />
           </button>
         </div>
       ) : (

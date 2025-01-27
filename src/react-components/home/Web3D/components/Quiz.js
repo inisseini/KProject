@@ -263,7 +263,7 @@ export function Quiz(props) {
       {quizFinished && showResult ? (
         <div className="QuizContainer result" ref={scrollRef}>
           <h1>
-            <TextWithRuby text={"【　結果発表　】"} />
+            <TextWithRuby text={"【　結果発表　】"} textAlign="center" />
           </h1>
           <p>
             スコア: {score} / {questions.length}
@@ -271,10 +271,10 @@ export function Quiz(props) {
           {score >= 4 ? (
             <>
               <p className="success">
-                <TextWithRuby text={"合格です！「計量はかせ」に認定します！"} />
+                <TextWithRuby text={"合格です！「計量はかせ」に認定します！"} textAlign="center" />
               </p>
               <img src={KeiryouHakaseClear} alt="計量はかせマーク" />
-              <div className="husen animatedItem horizon" style={{ margin: "1.8em auto" }}>
+              <div className="husen" style={{ margin: "1.8em auto" }}>
                 <a href={ninnteijou} download>
                   <TextWithRuby text={"認定状をダウンロードする"} />
                   <span></span>

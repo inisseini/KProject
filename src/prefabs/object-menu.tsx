@@ -152,7 +152,7 @@ function OpenLinkButton(props: Attrs) {
       width={0.4}
       height={buttonHeight}
       type={BUTTON_TYPES.DEFAULT}
-      text={"open link"}
+      text={"CLICK"}
       {...props}
     />
   );

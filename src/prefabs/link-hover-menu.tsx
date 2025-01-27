@@ -18,7 +18,7 @@ function LinkButton(props: LinkButtonAttrs) {
       name="Link Button"
       height={BUTTON_HEIGHT}
       scale={BUTTON_SCALE}
-      text={"open link"}
+      text={"CLICK"}
       type={BUTTON_TYPES.ACTION}
       width={BUTTON_WIDTH}
       {...props}

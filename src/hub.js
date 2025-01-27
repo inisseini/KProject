@@ -729,8 +729,24 @@ async function runBotMode(scene, entryManager) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   if (!root) {
-    const container = document.getElementById("ui-root");
-    root = createRoot(container);
+    const PASSWORD = "20250123keiryoumuseum";
+
+    function checkPassword() {
+      const userInput = prompt("パスワードを入力してください:");
+
+      if (userInput === PASSWORD) {
+        console.log("認証成功！処理を続行します。");
+        // 後続の処理を書く
+
+        const container = document.getElementById("ui-root");
+        root = createRoot(container);
+      } else {
+        alert("パスワードが間違っています。");
+        return; // 関数の中断
+      }
+    }
+
+    checkPassword(); // パスワードチェックを実行
   }
 
   if (isOAuthModal) {

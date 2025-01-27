@@ -58,7 +58,7 @@ export function ExpandableHtml({
     div.style.padding = "5px";
     div.style.borderRadius = "5px";
     div.style.textAlign = "center";
-    div.style.fontSize = "12px";
+    div.style.fontSize = "8px";
 
     // AntdのPopconfirmを組み込む
     const popConfirmWrapper = document.createElement("div");
@@ -139,7 +139,7 @@ export function ExpandableHtml({
       meshRef.current.scale.set(1, 1, 1); // ラベルの文字サイズをスケールに基づいて更新
       const div = meshRef.current.children[0]?.element;
       if (div) {
-        const fontSize = Math.round(scale * 12); // 基本サイズ12pxにスケールを乗算
+        const fontSize = Math.round(scale * 8); // 基本サイズ12pxにスケールを乗算
         div.style.fontSize = `${fontSize}px`;
       }
     };

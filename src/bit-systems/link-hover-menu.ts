@@ -105,7 +105,7 @@ function updateButtonText(world: HubsWorld, menu: EntityID, button: EntityID) {
   let label = "";
   switch (linkType) {
     case LinkType.LINK:
-      label = "open link";
+      label = "CLICK";
       break;
     case LinkType.AVATAR:
       label = "use avatar";
@@ -118,7 +118,7 @@ function updateButtonText(world: HubsWorld, menu: EntityID, button: EntityID) {
       break;
     case LinkType.ROOM:
     case LinkType.ROOM_URL:
-      label = "visit room";
+      label = "CLICK";
       break;
   }
   textObj.text = label;

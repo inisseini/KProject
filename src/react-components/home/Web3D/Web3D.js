@@ -13,6 +13,7 @@ import { ResearchSupport } from "./components/ResearchSupport";
 import Logo from "../../../assets/images/keiryou logo.png";
 import Goal from "../../../assets/images/keiryou-hakase-goal.png";
 import Clear from "../../../assets/images/keiryou-hakase-clear.png";
+import PleaseFeedback from "../../../assets/images/pleasefeedback.png";
 import { useAnimateOnScroll } from "../TopPage/hook/useAnimateOnScroll";
 import { TextWithRuby } from "./components/TextWithRuby";
 import { Kensyakuki } from "./components/Kensyakuki";
@@ -395,6 +396,17 @@ export function Web3D(props) {
           </div>
 
           <div className="diviner"></div>
+
+          {!JSON.parse(localStorage.getItem("getFeedback")) && (
+            <div
+              onClick={() => {
+                document.getElementById("feedbackContainer")?.click();
+              }}
+              className="pleaseFeedback"
+            >
+              <img src={PleaseFeedback} alt="アンケートのお願い" />
+            </div>
+          )}
 
           <div className="titleContainer" id="QuizAnchor">
             <div className="sticker hakarun3"></div>

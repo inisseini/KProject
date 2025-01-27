@@ -320,7 +320,7 @@ export function ContactForm() {
           handleSubmit(e);
         }}
       >
-        <TextWithRuby text={"送信する"} />
+        <TextWithRuby text={"送信する"} textAlign="center" />
         <span></span>
       </div>
     </form>

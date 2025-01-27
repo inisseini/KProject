@@ -20,7 +20,7 @@ AFRAME.registerComponent("open-media-button", {
       this.el.object3D.visible = !!visible;
 
       if (visible) {
-        let label = "open link";
+        let label = "CLICK";
         if (!this.data.onlyOpenLink) {
           let hubId;
           if (await isLocalHubsAvatarUrl(src)) {
@@ -32,7 +32,7 @@ AFRAME.registerComponent("open-media-button", {
             if (url.hash && window.APP.hub.hub_id === hubId) {
               label = "go to";
             } else {
-              label = "visit room";
+              label = "CLICK";
             }
           }
         }
