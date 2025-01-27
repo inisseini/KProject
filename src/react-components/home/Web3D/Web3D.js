@@ -145,6 +145,16 @@ export function Web3D(props) {
 
   return (
     <>
+      {!isOpen && (
+        <div className="fixTag open MOBILE" onClick={() => setMenu()}>
+          <LuMenu style={{ fontSize: "30px", margin: "0 auto" }} />
+        </div>
+      )}
+      {isOpen && (
+        <div className="fixTag close MOBILE" onClick={() => setMenu()}>
+          <MdOutlineClose style={{ fontSize: "30px", margin: "0 auto" }} />
+        </div>
+      )}
       <SubPage
         currentDate={currentDate}
         isOpen={isOpen}
@@ -154,18 +164,6 @@ export function Web3D(props) {
         isWeb3D={true}
       />
       <div className="Web3D">
-        {!isOpen && (
-          <div className="tag open MOBILE" onClick={() => setMenu()}>
-            <LuMenu />
-            <p className="fs">メニュー</p>
-          </div>
-        )}
-        {isOpen && (
-          <div className="tag close MOBILE" onClick={() => setMenu()}>
-            <MdOutlineClose />
-            <p className="">閉じる</p>
-          </div>
-        )}
         <div style={{ position: "relative", zIndex: "0" }} className="Web3DContentscontainer">
           <div className="objectsContainer">
             {/*<StatsComponent />*/}

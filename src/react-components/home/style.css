@@ -11,7 +11,7 @@
   --darkerGreen: #7ac91a;
   --darkerRed: #cd2552bd;
   --textpadding: 10px 20px;
-  --mediaScreen: 640px;
+  --mediaScreen: 800px;
   --lineHeight: 1.8em;
 }
 
@@ -454,14 +454,12 @@ table {
   }
 }
 .App .TopPage .section1 .contentsContainer .concept .topImgContainer {
-  width: 100%;
-  aspect-ratio: 1/1;
   position: relative;
   margin: 0 auto;
 }
 .App .TopPage .section1 .contentsContainer .concept .topImgContainer img {
   width: 100%;
-  max-width: 800px;
+  max-width: 640px;
   aspect-ratio: 1/1;
   position: absolute;
   top: 0;
@@ -720,7 +718,7 @@ header,
     grid-template-areas: "item1 item4";
     grid-template-columns: 4fr 2fr;
 
-    padding: 20px;
+    padding: 0 1.8em 1.8em 1.8em;
   }
 }
 header .item1,
@@ -1327,7 +1325,7 @@ footer .section3 {
 }
 
 .menuContainer {
-  margin-bottom: 80px;
+  margin: 1.8em 0 3.6em 0;
   font-family: "Yomogi", serif;
 }
 
@@ -1403,7 +1401,7 @@ footer .section3 {
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 800px) {
   .MOBILE {
     display: none;
   }
@@ -1426,7 +1424,7 @@ footer .section3 {
     gap: 0 10px;
   }
   .answerPane {
-    width: 100%;
+    width: calc(100% - 2em);
     max-width: 100dvw;
     overflow-y: auto;
     aspect-ratio: 1/1.2;
@@ -1453,7 +1451,6 @@ footer .section3 {
 .Web3DContentscontainer {
   background-color: var(--paper);
   padding: 0 0 20px 0;
-  margin: 20px auto;
 }
 .Web3DContentscontainer::before {
   position: absolute;
@@ -1820,7 +1817,7 @@ footer .section3 {
 
 .FeedBack {
   width: calc(100% - 30px);
-  max-width: 800px;
+  max-width: 640px;
   margin: 50px auto;
   padding: 20px 15px;
   background-color: var(--paper);
@@ -2122,7 +2119,11 @@ footer .info {
   writing-mode: vertical-rl; /* 縦書き (右から左) */
   text-orientation: upright; /* 文字を正しい向きに表示 */
   text-align: center; /* テキストを中央揃え */
+  display: flex; /* Safariのテキスト揃えを調整 */
+  justify-content: center;
   align-items: center;
+  -webkit-writing-mode: vertical-rl; /* Safari対応 */
+  -webkit-text-orientation: upright; /* Safari対応 */
 }
 
 mark {

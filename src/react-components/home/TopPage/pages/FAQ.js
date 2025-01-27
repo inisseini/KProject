@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TextWithRuby } from "../../Web3D/components/TextWithRuby";
+import { width } from "@fortawesome/free-solid-svg-icons/faTimes";
 
 export function FAQ() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -86,7 +87,8 @@ const styles = {
     flex: "2",
     padding: "1em",
     boxShadow: "4px 8px 8px -4px #88888850",
-    backgroundColor: "#eaffd0"
+    backgroundColor: "#eaffd0",
+    width: "calc(100% - 2em)"
   },
   answer: {
     lineHeight: "1.5em",
