@@ -10,23 +10,9 @@ export function HomePage() {
 
   const currentURL = window.location.href;
 
-  if (currentURL.includes("?page=web3d")) {
-    return (
-      <>
-        <div className="App">
-          <Web3D />
-        </div>
-
-        <WoodenDesk />
-      </>
-    );
-  }
-
   return (
     <>
-      <div className="App">
-        <TopPage />
-      </div>
+      <div className="App">{currentURL.includes("?page=web3d") ? <Web3D /> : <TopPage />}</div>
 
       <WoodenDesk />
     </>

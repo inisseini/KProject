@@ -17,7 +17,6 @@ export function ExpandableHtml({
 }) {
   const meshRef = useRef();
   const labelRef = useRef();
-  const raycasterRef = useRef(new THREE.Raycaster());
   const { scene, gl, camera } = useThree();
   const [isVisible, setIsVisible] = useState(true);
   const [isPopConfirmVisible, setIsPopConfirmVisible] = useState(false);
@@ -50,7 +49,7 @@ export function ExpandableHtml({
   }, [gl]);
 
   useEffect(() => {
-    if (!meshRef.current) return;
+    if (!meshRef.current | !isVisible) return;
 
     // ラベルの作成
     const div = document.createElement("div");
@@ -100,21 +99,26 @@ export function ExpandableHtml({
       }
       root.unmount();
     };
-  }, [initialText, longText, confirmFunction, isPopConfirmVisible]);
+  }, [initialText, longText, confirmFunction, isPopConfirmVisible, isVisible]);
 
   useEffect(() => {
     const checkOcclusion = () => {
-      if (!meshRef.current || !raycasterRef.current || !camera) return;
+      console.log("check");
 
-      const raycaster = raycasterRef.current;
-      const origin = camera.position;
-      const direction = new THREE.Vector3().copy(meshRef.current.position).sub(camera.position).normalize();
+      if (!meshRef.current || !camera) return;
 
-      raycaster.set(origin, direction);
+      const raycaster = new THREE.Raycaster();
+      const direction = new THREE.Vector3();
+      // 点Aから点Bへの方向を計算
+      direction.subVectors(meshRef.current.position, camera.position).normalize().negate();
+      // Raycasterを設定
+      raycaster.set(meshRef.current.position, direction);
+
+      // 障害物との衝突判定
       const intersects = raycaster.intersectObjects(occludeObjects, true);
 
       // ラベルの表示・非表示を更新
-      if (intersects.length > 0 && intersects[0].distance < camera.position.distanceTo(meshRef.current.position)) {
+      if (intersects?.length > 0) {
         setIsPopConfirmVisible(false);
         setIsVisible(false);
       } else {
@@ -126,8 +130,18 @@ export function ExpandableHtml({
       if (!meshRef.current) return;
 
       const distance = camera.position.distanceTo(meshRef.current.position);
-      const scale = 1 / (distance / distanceFactor);
-      meshRef.current.scale.set(scale, scale, scale);
+
+      // スケーリングを一定の範囲に抑える
+      const minScale = 0.2; // 最小スケール
+      const maxScale = 5; // 最大スケール
+      const scale = Math.min(Math.max(1 / (distance / distanceFactor), minScale), maxScale);
+
+      meshRef.current.scale.set(1, 1, 1); // ラベルの文字サイズをスケールに基づいて更新
+      const div = meshRef.current.children[0]?.element;
+      if (div) {
+        const fontSize = Math.round(scale * 12); // 基本サイズ12pxにスケールを乗算
+        div.style.fontSize = `${fontSize}px`;
+      }
     };
 
     const animate = () => {
@@ -146,7 +160,7 @@ export function ExpandableHtml({
   }, [camera, gl, occludeObjects, scene, distanceFactor]);
 
   return (
-    <mesh ref={meshRef} position={position} onPointerDown={() => setIsPopConfirmVisible(true)}>
+    <mesh visible={isVisible} ref={meshRef} position={position} onPointerDown={() => setIsPopConfirmVisible(true)}>
       <sphereGeometry args={[0.4, 32, 32]} />
       <meshBasicMaterial color="#ffa096" />
     </mesh>

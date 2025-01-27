@@ -59,7 +59,7 @@ const ModelGLB = () => {
         position={[0, 2, -1]}
         sphereColor="red"
         initialText="クリック"
-        occlude={[]} // occlusion チェックを無効化して表示確認
+        occludeObjects={[gltf.scene]} // occlusion チェックを無効化して表示確認
         longText={<TextWithRuby text={"左右の皿をつり合わせることで重さをはかることができるよ！"} />}
         confirmFunction={() => playAnimation()}
       />
