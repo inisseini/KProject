@@ -28,7 +28,7 @@ function Web3DRoot() {
   );
 }
 
-const container = document.getElementById("Web3D-root");
+const container = document.getElementById("ui-root");
 
 const root = createRoot(container);
 root.render(<Web3DRoot />);
