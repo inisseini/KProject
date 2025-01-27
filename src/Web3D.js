@@ -27,6 +27,7 @@ function Web3DRoot() {
     </>
   );
 }
+console.log("test");
 
 const container = document.getElementById("ui-root");
 
