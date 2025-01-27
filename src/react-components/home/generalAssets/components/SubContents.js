@@ -72,7 +72,7 @@ export function SubContents(props) {
           <li
             className="husen bottom"
             onClick={() => {
-              handleNavigate("/web3d#Web3DAnchor");
+              handleNavigate("?page=web3d#Web3DAnchor");
             }}
           >
             <TextWithRuby text={"計量器を動かしてみよう！"} />
@@ -81,7 +81,7 @@ export function SubContents(props) {
           <li
             className="husen bottom"
             onClick={() => {
-              handleNavigate("/web3d#QuizAnchor");
+              handleNavigate("?page=web3d#QuizAnchor");
             }}
           >
             <TextWithRuby text={"クイズに挑戦しよう！"} />
@@ -90,7 +90,7 @@ export function SubContents(props) {
           <li
             className="husen green bottom"
             onClick={() => {
-              handleNavigate("/web3d#SupportAnchor");
+              handleNavigate("?page=web3d#SupportAnchor");
             }}
           >
             <TextWithRuby text={"まとめ用紙を活用しよう！"} />

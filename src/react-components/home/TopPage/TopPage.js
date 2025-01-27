@@ -93,7 +93,7 @@ export function TopPage(props) {
     setSelectedNumbers(shuffled.slice(0, 2)); // 最初の2つを取得
   };
 
-  const redirectUrl = new URL("/web3d", window.location);
+  const redirectUrl = new URL("?page=web3d", window.location);
 
   return (
     <>
@@ -367,7 +367,7 @@ export function TopPage(props) {
                 </div>
                 <div
                   className="husen animatedItem horizon"
-                  onClick={() => (window.location.href = "/web3d#QuizAnchor")}
+                  onClick={() => (window.location.href = "?page=web3d#QuizAnchor")}
                 >
                   <TextWithRuby text={"③クイズはこちら"} />
                   <span></span>
@@ -400,7 +400,7 @@ export function TopPage(props) {
               <div
                 className="husen animatedItem horizon"
                 style={{ margin: "30px auto" }}
-                onClick={() => (window.location.href = "/web3d#SupportAnchor")}
+                onClick={() => (window.location.href = "?page=web3d#SupportAnchor")}
               >
                 <TextWithRuby text={"詳細はこちら"} />
                 <span></span>

@@ -75,13 +75,13 @@ export function SubPage(props) {
               </p>
             </div>
 
-            <div className="tag tagToWeb3D PC verticalText" onClick={() => handleNavigate("/web3d")}>
+            <div className="tag tagToWeb3D PC verticalText" onClick={() => handleNavigate("?page=web3d")}>
               <p className="PC" style={{ fontSize: "15px" }}>
                 <span style={{ marginBottom: "0.3em" }}>ウ</span>
                 <span style={{ marginBottom: "-0.2em" }}>ェ</span>ブサイト
               </p>
             </div>
-            <div className="tag tagToQuiz PC verticalText" onClick={() => handleNavigate("/web3d#QuizAnchor")}>
+            <div className="tag tagToQuiz PC verticalText" onClick={() => handleNavigate("?page=web3d#QuizAnchor")}>
               <p className="PC" style={{ fontSize: "15px" }}>
                 クイズ
               </p>

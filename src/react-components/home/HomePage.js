@@ -8,6 +8,20 @@ export function HomePage() {
   console.log("homepage");
   console.log(window.location);
 
+  const currentURL = window.location.href;
+
+  if (currentURL.includes("?page=web3d")) {
+    return (
+      <>
+        <div className="App">
+          <Web3D />
+        </div>
+
+        <WoodenDesk />
+      </>
+    );
+  }
+
   return (
     <>
       <div className="App">
