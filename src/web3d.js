@@ -18,10 +18,18 @@ registerTelemetry("/web3d", "Web3D Page");
 window.APP = { store };
 function Web3DRoot() {
   return (
-    <>
-      <Web3D />
-      <WoodenDesk />
-    </>
+    <WrappedIntlProvider>
+      <ThemeProvider store={store}>
+        <AuthContextProvider store={store}>
+          <PageContainer>
+            <Center>
+              <Web3D />
+              <WoodenDesk />
+            </Center>
+          </PageContainer>
+        </AuthContextProvider>
+      </ThemeProvider>
+    </WrappedIntlProvider>
   );
 }
 console.log("test");
