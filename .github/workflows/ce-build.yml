@@ -21,40 +21,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-
-      - name: Cache Node.js modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        run: npm install --verbose
-
-      - name: Check environment
-        run: |
-          node -v
-          npm -v
-          df -h
-          printenv
-
-      - name: Build project
-        run: |
-          export NODE_OPTIONS=--max-old-space-size=4096
-          npm run build --verbose
-
-      - name: Debug build error
-        if: failure()
-        run: |
-          ls -la
-          cat some-log-file.log
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
         with:
@@ -66,14 +32,24 @@ jobs:
           username: ${{ inputs.DOCKER_HUB_USR }}
           password: ${{ secrets.DOCKER_HUB_PWD }}
 
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          path: "./repo"
+
       - name: Use codePath for multirepo
-        if: ${{ inputs.codePath != '' }}
+        if: ${{ inputs.codePath != ''}}
         run: |
           mkdir ./_repo
           cp -rf ./repo/${{ inputs.codePath }}/* ./_repo
           rm -rf ./repo
           mv ./_repo ./repo
           ls ./repo
+
+      - name: Docker Buildx setup
+        uses: docker/setup-buildx-action@v1
+        with:
+          install: true
 
       - name: Docker Build and Push
         uses: docker/build-push-action@v2
