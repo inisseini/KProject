@@ -35,6 +35,8 @@ export function TopPage(props) {
   const [isOpen, setOpen] = useState(false);
   const [firstView, setView] = useState(true);
 
+  console.log("toppage");
+
   const [isPassed, setIsPassed] = useState(JSON.parse(localStorage.getItem("quizPassed")) || false);
 
   const { scrollToSectionTop, scrollPastSection } = ScrollToSection({
