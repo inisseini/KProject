@@ -30,7 +30,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           username: ${{ inputs.DOCKER_HUB_USR }}
-          password: ${{ secrets.DOCKER_HUB_PWD }}
+          password: ${{ secrets.DOCKER_HUB_PWD2 }}
 
       - name: Checkout repository
         uses: actions/checkout@v2
