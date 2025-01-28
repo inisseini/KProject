@@ -729,7 +729,7 @@ async function runBotMode(scene, entryManager) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Lambda Function URL
-  const lambdaUrl = "https://7x7ebf2ma6ylge4ce75z7tf3r40wtywq.lambda-url.ap-northeast-1.on.aws/";
+  const lambdaUrl = "https://4vonjibgddpv3sakejmvvfv4ii0jdgan.lambda-url.ap-northeast-1.on.aws/";
 
   // データ送信用の関数
   async function sendVisitorData() {

@@ -229,6 +229,11 @@ export function Quiz(props) {
   };
 
   useEffect(() => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://7vbjcrvvegxaix5eqmsyog52ku0lmyvk.lambda-url.ap-northeast-1.on.aws/", true);
+    xhr.setRequestHeader("content-type", "text/plain");
+    const request = `score=${score}`;
+    xhr.send(request);
     if (score >= 4) {
       localStorage.setItem("quizPassed", true);
       props.setIsPassed(true);
