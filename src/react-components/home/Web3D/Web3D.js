@@ -215,7 +215,7 @@ export function Web3D(props) {
               <li
                 className="husen bottom animatedItem horizon"
                 onClick={() => {
-                  handleNavigate("#Web3DAnchor");
+                  handleNavigate("?page=web3d#Web3DAnchor");
                 }}
               >
                 <TextWithRuby text={"計量器を動かしてみよう！"} />
@@ -224,7 +224,7 @@ export function Web3D(props) {
               <li
                 className="husen bottom animatedItem horizon"
                 onClick={() => {
-                  handleNavigate("#QuizAnchor");
+                  handleNavigate("?page=web3d#QuizAnchor");
                 }}
               >
                 <TextWithRuby text={"クイズに挑戦しよう！"} />
@@ -233,7 +233,7 @@ export function Web3D(props) {
               <li
                 className="husen green bottom animatedItem horizon"
                 onClick={() => {
-                  handleNavigate("#SupportAnchor");
+                  handleNavigate("?page=web3d#SupportAnchor");
                 }}
               >
                 <TextWithRuby text={"まとめ用紙を活用しよう！"} />
