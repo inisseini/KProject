@@ -144,6 +144,14 @@ export function Web3D(props) {
     }
   };
 
+  const handleNavigate = id => {
+    // 動的にフル URL を生成
+    const targetUrl = `${window.location.origin}${id}`;
+    window.location.href = targetUrl; // URL を変更して遷移
+    props.setOpen && props.setOpen();
+    props.setMenu && props.setMenu();
+  };
+
   return (
     <>
       {!isOpen && (
@@ -207,7 +215,7 @@ export function Web3D(props) {
               <li
                 className="husen bottom animatedItem horizon"
                 onClick={() => {
-                  scrollToSectionTop("Web3DAnchor");
+                  handleNavigate("#Web3DAnchor");
                 }}
               >
                 <TextWithRuby text={"計量器を動かしてみよう！"} />
@@ -216,7 +224,7 @@ export function Web3D(props) {
               <li
                 className="husen bottom animatedItem horizon"
                 onClick={() => {
-                  scrollPastSection("QuizAnchor");
+                  handleNavigate("#QuizAnchor");
                 }}
               >
                 <TextWithRuby text={"クイズに挑戦しよう！"} />
@@ -225,7 +233,7 @@ export function Web3D(props) {
               <li
                 className="husen green bottom animatedItem horizon"
                 onClick={() => {
-                  scrollToSectionTop("SupportAnchor");
+                  handleNavigate("#SupportAnchor");
                 }}
               >
                 <TextWithRuby text={"まとめ用紙を活用しよう！"} />
