@@ -129,7 +129,14 @@ export function TopPage(props) {
 
             {isPassed ? (
               <div className="item4">
-                <img src={Clear} alt="ロゴ" className="HakaseGoal animatedItem vertical" />
+                <img
+                  src={Clear}
+                  alt="ロゴ"
+                  className="HakaseGoal animatedItem vertical"
+                  onClick={() => {
+                    window.location.href = "/";
+                  }}
+                />
                 <a href={ninnteijou} download className="husen animatedItem horizon PC">
                   <TextWithRuby text={"認定状をダウンロードする"} />
                   <span></span>
@@ -276,10 +283,10 @@ export function TopPage(props) {
               <div className="husen animatedItem horizon" onClick={() => handleNavigate("#ResearchAnchor")}>
                 <TextWithRuby text={"自由研究におすすめ！"} /> <span></span>
               </div>
-              <div className="husen animatedItem horizon" onClick={() => scrollToSectionTop("#FAQ")}>
+              <div className="husen animatedItem horizon" onClick={() => handleNavigate("#FAQ")}>
                 サービスの利用について <span></span>
               </div>
-              <div className="husen green animatedItem horizon" onClick={() => scrollToSectionTop("#forParentsAnchor")}>
+              <div className="husen green animatedItem horizon" onClick={() => handleNavigate("#forParentsAnchor")}>
                 <TextWithRuby text={"保護者の方へ"} />
                 <span></span>
               </div>
@@ -372,7 +379,7 @@ export function TopPage(props) {
                   <TextWithRuby text={"①メタバースはこちら"} />
                   <span></span>
                 </div>
-                <div className="husen animatedItem horizon" onClick={() => (window.location.href = "web3d")}>
+                <div className="husen animatedItem horizon" onClick={() => (window.location.href = "?page=web3d")}>
                   <TextWithRuby text={"②ウェブサイトはこちら"} />
                   <span></span>
                 </div>

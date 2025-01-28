@@ -37,7 +37,14 @@ export function SubPage(props) {
 
           {isPassed ? (
             <div className="item4">
-              <img src={Clear} alt="ロゴ" className="HakaseGoal animatedItem vertical PC" />
+              <img
+                src={Clear}
+                alt="ロゴ"
+                className="HakaseGoal animatedItem vertical PC"
+                onClick={() => {
+                  window.location.href = "/";
+                }}
+              />
               <a href={ninnteijou} download className="husen animatedItem horizon PC">
                 <TextWithRuby text={"認定状をダウンロードする"} />
                 <span></span>
