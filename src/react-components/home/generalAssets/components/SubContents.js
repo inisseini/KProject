@@ -120,6 +120,11 @@ export function SubContents(props) {
           <li
             className="husen "
             onClick={() => {
+              const xhr = new XMLHttpRequest();
+              xhr.open("POST", "https://movwsffowtrsunmnpfoq4yn2uu0rftrn.lambda-url.ap-northeast-1.on.aws/", true);
+              xhr.setRequestHeader("content-type", "text/plain");
+              const request = `from=${window.location.href}`;
+              xhr.send(request);
               window.location.href =
                 "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8";
             }}
@@ -166,7 +171,7 @@ export function SubContents(props) {
         }}
         className="detail fm"
       >
-        <TextWithRuby text={"© 2024 東京都計量検定所　|"} />
+        <TextWithRuby text={"© 2024 東京都計量検定所　|"} textAlign="center" />
         <CustomModal triggerText={"　サイトポリシー"}>
           <Policy />
         </CustomModal>

@@ -857,7 +857,7 @@ header .HakaseGoal,
 }
 .marker::after {
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   left: -5px;
   -webkit-clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
   clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
@@ -1014,6 +1014,8 @@ header .HakaseGoal,
 .hakarun6,
 .hakarun7,
 .hakarun8 {
+  position: relative;
+  z-index: 4;
   @media (max-width: 640px) {
     flex-grow: 0;
     width: 80px;
@@ -1330,7 +1332,6 @@ footer .section3 {
 }
 
 .contactForm {
-  width: 200px;
   position: relative;
   transition: 0.2s all ease;
   box-shadow: 4px 8px 8px -4px var(--grey);
@@ -2098,6 +2099,7 @@ footer .info {
 
 .rubyContainer {
   max-width: 700px;
+  height: 100%;
 }
 
 .recommendContainer {
@@ -2152,4 +2154,11 @@ mark {
   position: relative;
   z-index: 2;
   cursor: pointer;
+}
+
+.detail {
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center !important;
+  }
 }

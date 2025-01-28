@@ -266,10 +266,19 @@ export function TopPage(props) {
                   <div
                     className="husen animatedItem horizon"
                     style={{ margin: "0 auto" }}
-                    onClick={() =>
-                      (window.location.href =
-                        "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8")
-                    }
+                    onClick={() => {
+                      const xhr = new XMLHttpRequest();
+                      xhr.open(
+                        "POST",
+                        "https://movwsffowtrsunmnpfoq4yn2uu0rftrn.lambda-url.ap-northeast-1.on.aws/",
+                        true
+                      );
+                      xhr.setRequestHeader("content-type", "text/plain");
+                      const request = `from=${window.location.href}`;
+                      xhr.send(request);
+                      window.location.href =
+                        "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8";
+                    }}
                   >
                     こちらをクリック
                     <span></span>
@@ -400,10 +409,19 @@ export function TopPage(props) {
               <div className="recommendContainer">
                 <div
                   className="husen animatedItem horizon"
-                  onClick={() =>
-                    (window.location.href =
-                      "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8")
-                  }
+                  onClick={() => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open(
+                      "POST",
+                      "https://movwsffowtrsunmnpfoq4yn2uu0rftrn.lambda-url.ap-northeast-1.on.aws/",
+                      true
+                    );
+                    xhr.setRequestHeader("content-type", "text/plain");
+                    const request = `from=${window.location.href}`;
+                    xhr.send(request);
+                    window.location.href =
+                      "https://keiryomuseum.metro.tokyo.lg.jp/BEY8thH/%E8%A8%88%E9%87%8F%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0-%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9%E5%88%A5%E9%A4%A8";
+                  }}
                 >
                   <TextWithRuby text={"①メタバースはこちら"} />
                   <span></span>

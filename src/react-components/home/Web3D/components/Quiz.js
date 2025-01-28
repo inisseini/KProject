@@ -229,6 +229,7 @@ export function Quiz(props) {
   };
 
   useEffect(() => {
+    if (!showResult) return;
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://7vbjcrvvegxaix5eqmsyog52ku0lmyvk.lambda-url.ap-northeast-1.on.aws/", true);
     xhr.setRequestHeader("content-type", "text/plain");
