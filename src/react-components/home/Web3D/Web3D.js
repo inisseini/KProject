@@ -257,7 +257,7 @@ export function Web3D(props) {
                 >
                   <TextWithRuby
                     text={`${selectedNum - 1 === 0 ? list[9] : list[selectedNum - 2]}`}
-                    anotherRuby={{ 浮: "うき" }}
+                    anotherRuby={{ 浮: "ふ" }}
                     textAlign="center"
                   />
                   <span></span>
@@ -275,7 +275,7 @@ export function Web3D(props) {
                 >
                   <TextWithRuby
                     text={`${selectedNum === 10 ? list[0] : list[selectedNum]}`}
-                    anotherRuby={{ 浮: "うき" }}
+                    anotherRuby={{ 浮: "ふ" }}
                     textAlign="center"
                   />
 

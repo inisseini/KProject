@@ -47,7 +47,7 @@ export function Title({ selectedNum, setNum }) {
         }}
       >
         <div className="selected-option husen red bottom center" onClick={() => setIsOpen(!isOpen)}>
-          <TextWithRuby text={`${list[selectedNum - 1]}`} anotherRuby={{ 浮: "うき" }} textAlign="center" />
+          <TextWithRuby text={`${list[selectedNum - 1]}`} anotherRuby={{ 浮: "ふ" }} textAlign="center" />
           <span></span>
         </div>
         {isOpen && (
@@ -80,7 +80,7 @@ export function Title({ selectedNum, setNum }) {
                 onMouseEnter={e => (e.currentTarget.style.background = "#f0f0f0")}
                 onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
-                <TextWithRuby text={item} anotherRuby={{ 浮: "うき" }} />
+                <TextWithRuby text={item} anotherRuby={{ 浮: "ふ" }} />
               </li>
             ))}
           </ul>

@@ -101,6 +101,14 @@ export function TopPage(props) {
 
   const redirectUrl = new URL("?page=web3d", window.location);
 
+  const handleNavigate = id => {
+    // 動的にフル URL を生成
+    const targetUrl = `${window.location.origin}${id}`;
+    window.location.href = targetUrl; // URL を変更して遷移
+    props.setOpen && props.setOpen();
+    props.setMenu && props.setMenu();
+  };
+
   return (
     <>
       {!isOpen && (
@@ -141,7 +149,7 @@ export function TopPage(props) {
             <div className="column">
               <div className="column1 left">
                 <div className="marker-box concept">
-                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", width: "calc(100% - 40px)" }}>
                     <div
                       style={{
                         display: "flex",
@@ -253,25 +261,25 @@ export function TopPage(props) {
             </div>
 
             <div className="forUser fm">
-              <div className="husen animatedItem horizon" onClick={() => scrollToSectionTop("WhyAnchor")}>
+              <div className="husen animatedItem horizon" onClick={() => handleNavigate("#WhyAnchor")}>
                 <TextWithRuby text={"「計量」ってなんで大事なの？"} />
                 <span></span>
               </div>
-              <div className="husen animatedItem horizon" onClick={() => scrollToSectionTop("AboutAnchor")}>
+              <div className="husen animatedItem horizon" onClick={() => handleNavigate("#AboutAnchor")}>
                 <TextWithRuby text={"計量ミュージアムとは"} />
                 <span></span>
               </div>
-              <div className="husen animatedItem horizon" onClick={() => scrollToSectionTop("HowAnchor")}>
+              <div className="husen animatedItem horizon" onClick={() => handleNavigate("#HowAnchor")}>
                 <TextWithRuby text={"楽しみ方いっぱい！"} />
                 <span></span>
               </div>
-              <div className="husen animatedItem horizon" onClick={() => scrollToSectionTop("ResearchAnchor")}>
+              <div className="husen animatedItem horizon" onClick={() => handleNavigate("#ResearchAnchor")}>
                 <TextWithRuby text={"自由研究におすすめ！"} /> <span></span>
               </div>
-              <div className="husen animatedItem horizon" onClick={() => scrollToSectionTop("FAQ")}>
+              <div className="husen animatedItem horizon" onClick={() => scrollToSectionTop("#FAQ")}>
                 サービスの利用について <span></span>
               </div>
-              <div className="husen green animatedItem horizon" onClick={() => scrollToSectionTop("forParentsAnchor")}>
+              <div className="husen green animatedItem horizon" onClick={() => scrollToSectionTop("#forParentsAnchor")}>
                 <TextWithRuby text={"保護者の方へ"} />
                 <span></span>
               </div>

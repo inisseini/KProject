@@ -63,7 +63,7 @@ const ModelGLB = () => {
         longText={
           <TextWithRuby
             text={"左の色付きのガソリンと右の透明な水では密度や比重が違うんだ！浮ひょうの沈み方から推測してみよう！"}
-            anotherRuby={{ 浮: "うき" }}
+            anotherRuby={{ 浮: "ふ" }}
           />
         }
         confirmFunction={() => playAnimation()}
