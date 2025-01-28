@@ -728,25 +728,37 @@ async function runBotMode(scene, entryManager) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  if (!root) {
-    const PASSWORD = "20250123keiryoumuseum";
+  // Lambda Function URL
+  const lambdaUrl = "https://7x7ebf2ma6ylge4ce75z7tf3r40wtywq.lambda-url.ap-northeast-1.on.aws/";
 
-    function checkPassword() {
-      const userInput = prompt("パスワードを入力してください:");
+  // データ送信用の関数
+  async function sendVisitorData() {
+    try {
+      const response = await fetch(lambdaUrl, {
+        method: "POST", // POST リクエストを使用
+        headers: {
+          "Content-Type": "application/json" // リクエストのコンテンツタイプ
+        },
+        body: JSON.stringify({}) // 空のボディ (今回は送信データ不要)
+      });
 
-      if (userInput === PASSWORD) {
-        console.log("認証成功！処理を続行します。");
-        // 後続の処理を書く
-
-        const container = document.getElementById("ui-root");
-        root = createRoot(container);
-      } else {
-        alert("パスワードが間違っています。");
-        return; // 関数の中断
+      // レスポンスを確認
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    }
 
-    checkPassword(); // パスワードチェックを実行
+      const data = await response.json();
+      console.log("成功:", data);
+    } catch (error) {
+      console.error("エラー:", error);
+    }
+  }
+
+  // 関数を実行
+  sendVisitorData();
+  if (!root) {
+    const container = document.getElementById("ui-root");
+    root = createRoot(container);
   }
 
   if (isOAuthModal) {

@@ -78,6 +78,35 @@ export function TopPage(props) {
     }
 
     generateRandomNumbers();
+
+    // Lambda Function URL
+    const lambdaUrl = "https://7x7ebf2ma6ylge4ce75z7tf3r40wtywq.lambda-url.ap-northeast-1.on.aws/";
+
+    // データ送信用の関数
+    async function sendVisitorData() {
+      try {
+        const response = await fetch(lambdaUrl, {
+          method: "POST", // POST リクエストを使用
+          headers: {
+            "Content-Type": "application/json" // リクエストのコンテンツタイプ
+          },
+          body: JSON.stringify({}) // 空のボディ (今回は送信データ不要)
+        });
+
+        // レスポンスを確認
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("成功:", data);
+      } catch (error) {
+        console.error("エラー:", error);
+      }
+    }
+
+    // 関数を実行
+    sendVisitorData();
   }, []);
 
   useEffect(() => {

@@ -15,34 +15,18 @@ registerTelemetry("/home", "Hubs Home Page");
 
 window.APP = { store };
 
-const PASSWORD = "20250123keiryoumuseum";
-
-function checkPassword() {
-  const userInput = prompt("パスワードを入力してください:");
-
-  if (userInput === PASSWORD) {
-    console.log("認証成功！処理を続行します。");
-    // 後続の処理を書く
-
-    function HomeRoot() {
-      return (
-        <WrappedIntlProvider>
-          <ThemeProvider store={store}>
-            <AuthContextProvider store={store}>
-              <HomePage />
-            </AuthContextProvider>
-          </ThemeProvider>
-        </WrappedIntlProvider>
-      );
-    }
-
-    const container = document.getElementById("home-root");
-    const root = createRoot(container);
-    root.render(<HomeRoot />);
-  } else {
-    alert("パスワードが間違っています。");
-    return; // 関数の中断
-  }
+function HomeRoot() {
+  return (
+    <WrappedIntlProvider>
+      <ThemeProvider store={store}>
+        <AuthContextProvider store={store}>
+          <HomePage />
+        </AuthContextProvider>
+      </ThemeProvider>
+    </WrappedIntlProvider>
+  );
 }
 
-checkPassword(); // パスワードチェックを実行
+const container = document.getElementById("home-root");
+const root = createRoot(container);
+root.render(<HomeRoot />);
