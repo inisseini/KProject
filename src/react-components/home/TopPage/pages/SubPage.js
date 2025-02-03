@@ -70,7 +70,7 @@ export function SubPage(props) {
           <>
             <div className="tag open PC" onClick={() => setMenu()}>
               <LuMenu style={{ fontSize: "30px", margin: "0 auto" }} />
-              <p className="PC" style={{ fontSize: "10px" }}>
+              <p className="PC" style={{ fontSize: "10px", whiteSpace: "nowrap" }}>
                 メニュー
               </p>
             </div>
