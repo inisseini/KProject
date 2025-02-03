@@ -29,6 +29,11 @@ export function SubPage(props) {
     setIsPassed(JSON.parse(localStorage.getItem("quizPassed")) || false);
   }, [props.isOpen]);
 
+  // Safari かつ Chrome でない場合に 'safari' クラスを <html> に追加
+  if (navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1) {
+    document.documentElement.classList.add("safari");
+  }
+
   return (
     <div className={props.isOpen ? "SubPage open" : props.firstView ? "SubPage" : "SubPage close"}>
       <div className="subpageContainer">
@@ -83,14 +88,13 @@ export function SubPage(props) {
               }}
             >
               <p className="PC" style={{ fontSize: "15px" }}>
-                メタバース
+                メタバ<span className="safari-dash">ー</span>ス
               </p>
             </div>
 
             <div className="tag tagToWeb3D PC verticalText" onClick={() => handleNavigate("?page=web3d")}>
               <p className="PC" style={{ fontSize: "15px" }}>
-                <span style={{ marginBottom: "0.3em" }}>ウ</span>
-                <span style={{ marginBottom: "-0.2em" }}>ェ</span>ブサイト
+                ウ<span className="tag-website-margin">ェ</span>ブサイト
               </p>
             </div>
             <div className="tag tagToQuiz PC verticalText" onClick={() => handleNavigate("?page=web3d#QuizAnchor")}>

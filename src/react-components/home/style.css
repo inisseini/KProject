@@ -2161,3 +2161,21 @@ mark {
     align-items: center !important;
   }
 }
+
+.safari {
+  .safari-dash {
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+}
+
+.tag-website-margin {
+  margin: 0.3em 0 -0.2em 0;
+}
+
+.safari {
+  .tag-website-margin {
+    margin: 0;
+    margin-top: -0.2em;
+  }
+}
