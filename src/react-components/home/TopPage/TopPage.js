@@ -185,7 +185,7 @@ export function TopPage(props) {
             <div className="column">
               <div className="column1 left">
                 <div className="marker-box concept">
-                  <div style={{ display: "flex", justifyContent: "space-between", width: "calc(100% - 40px)" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
                     <div
                       style={{
                         display: "flex",
