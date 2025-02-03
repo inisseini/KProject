@@ -428,7 +428,6 @@ table {
 .App .TopPage .section1 .contentsContainer .concept {
   width: 100%;
   max-width: 600px;
-  aspect-ratio: 1/1;
   background-size: contain;
   background-position: center;
   flex-grow: 1;
@@ -894,7 +893,6 @@ header .HakaseGoal,
   background-color: transparent;
   text-align: left;
   padding: 20px 20px;
-  height: 1.8em;
   width: calc(100% - 40px);
   box-sizing: border-box;
 }
