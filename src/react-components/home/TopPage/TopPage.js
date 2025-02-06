@@ -370,7 +370,7 @@ export function TopPage(props) {
               <div className="sticker hakarun2"></div>
             </div>
             <br />
-            <div className="ruby fm" style={{ marginTop: "0.5em" }}>
+            <div className="ruby fm" style={{ marginTop: "1em" }}>
               <TextWithRuby
                 text={
                   "計量ミュージアムは/*東京都計量検定所が運営*/するウェブサイトだよ。\n 「計量」をもっと身近で楽しいものだと感じてもらうためにたくさんのコンテンツを用意しているんだ。\n\n日常生活のいろいろな場面に関わっている/*計量を、体験・学習*/することができるよ。\n 楽しみながら計量のプロフェッショナル、「計量はかせ」になろう！！"
@@ -397,7 +397,7 @@ export function TopPage(props) {
               </h1>
               <div className="sticker hakarun4"></div>
             </div>
-            <div className="HowContainer fm" style={{ marginTop: "3.5em", textAlign: "center" }}>
+            <div className="HowContainer fm" style={{ marginTop: "4.5em", textAlign: "center" }}>
               <TextWithRuby
                 text={
                   "計量ミュージアムはさまざまなコンテンツで計量の魅力を発信します。\n\n①メタバース：/*江戸時代を再現*/したメタバース空間で両替商(お金の両替を職業にしていた人々)として/*実際に計量器を操作*/することができます。見るだけでなく体験することでより深い理解を得ましょう！\n\n②ウェブサイト：さまざまな時代の/*計量器の3Dモデル(全１０種類)*/に、ウェブサイト上で触れることができます。アップにしたり回転させたりアニメーションさせたり、満足するまで動かしまくろう！\n\n③クイズ：①と②で計量に詳しくなったら/*計量はかせクイズに挑戦*/だ！全5問のクイズに回答して/*4問正解したら計量はかせに認定*/されます。計量はかせになると、東京都計量検定所の/*はかるんから「計量はかせ」の認定状をもらえるよ*/！"
@@ -479,15 +479,17 @@ export function TopPage(props) {
             <div className="titleContainer">
               <h1 className="marker red fl">サービスの利用について</h1>
             </div>
-            <TextWithRuby
-              text={
-                "本サービスは/*6歳以上のお子様から、無料でご利用いただけます。*/\nそのほかサービスの利用については、以下のFAQをご参照ください。"
-              }
-              margin={"0 auto"}
-            />
-            <br />
-            <div className="ResearchContainer fm">
-              <FAQ />
+            <div style={{ marginTop: "2.8em" }}>
+              <TextWithRuby
+                text={
+                  "本サービスは/*6歳以上のお子様から、無料でご利用いただけます。*/\nそのほかサービスの利用については、以下のFAQをご参照ください。"
+                }
+                margin={"0 auto"}
+              />
+              <br />
+              <div className="ResearchContainer fm">
+                <FAQ />
+              </div>
             </div>
           </div>
         </div>
@@ -501,7 +503,7 @@ export function TopPage(props) {
                 <TextWithRuby text={"保護者の方へ"} />
               </h1>
             </div>
-            <div className="container fm" style={{ marginTop: "3.4em" }}>
+            <div className="container fm" style={{ marginTop: "2.8em" }}>
               <TextWithRuby
                 text={
                   "お子様の学習に際し以下の点をご留意ください。\n\n①/*利用時間*/：お子様とあらかじめ1日○時間までといったルールを決めておきましょう\n②/*アバター*/：アバターを操作している人とアバターを同一視しないように注意しましょう。"

@@ -1432,11 +1432,6 @@ footer .section3 {
 .Web3D {
   width: calc(100% - 40px);
   position: relative;
-  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/paperWhite.png");
-  background-size: cover, calc(100% - 16px) 1.8em; /* 横幅を16px減らす（8px余白を両端に） */
-  background-repeat: no-repeat, repeat; /* 紙のテクスチャと罫線の繰り返し */
-  background-position: center, 8px 0; /* 罫線の位置を調整 */
-  background-blend-mode: multiply; /* 紙と罫線を自然に重ねる */
   padding: 0px 0;
   font-family: "Yomogi", serif;
   margin: 0 auto;
@@ -1450,6 +1445,7 @@ footer .section3 {
 .Web3DContentscontainer {
   background-color: var(--paper);
   padding: 0 0 20px 0;
+  background-image: url("https://keiryou-resources.s3.ap-northeast-1.amazonaws.com/paperWhite.png");
 }
 .Web3DContentscontainer::before {
   position: absolute;
