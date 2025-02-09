@@ -25,23 +25,6 @@ const ModelGLB = () => {
     actionsRef.current = action;
   }, [gltf]);
 
-  useEffect(() => {
-    const handleKeyDown = event => {
-      if (event.key === "p" || event.key === "P") {
-        if (actionsRef.current) {
-          actionsRef.current.reset();
-          actionsRef.current.play();
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
   const playAnimation = () => {
     if (actionsRef.current) {
       actionsRef.current.reset();
@@ -59,7 +42,7 @@ const ModelGLB = () => {
         position={[1.9, 0.4, 0]}
         sphereColor="red"
         initialText="クリック"
-        occlude={[]} // occlusion チェックを無効化して表示確認
+        occludeObjects={[gltf.scene]} // occlusion チェックを無効化して表示確認
         longText={
           <TextWithRuby
             text={"左の色付きのガソリンと右の透明な水では密度や比重が違うんだ！浮ひょうの沈み方から推測してみよう！"}

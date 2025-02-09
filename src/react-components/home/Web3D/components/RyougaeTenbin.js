@@ -25,23 +25,6 @@ const ModelGLB = () => {
     actionsRef.current = action;
   }, [gltf]);
 
-  useEffect(() => {
-    const handleKeyDown = event => {
-      if (event.key === "p" || event.key === "P") {
-        if (actionsRef.current) {
-          actionsRef.current.reset();
-          actionsRef.current.play();
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
   const playAnimation = () => {
     if (actionsRef.current) {
       actionsRef.current.reset();
