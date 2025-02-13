@@ -91,7 +91,7 @@ export function FeedBack() {
       const xhr = new XMLHttpRequest();
       xhr.open("POST", "https://bwfx2kh7lq75rqbto3hnnj7si40mkndr.lambda-url.ap-northeast-1.on.aws/", true);
       xhr.setRequestHeader("content-type", "text/plain");
-      const request = `q1=${answers.q1}&q2.choices=${answers.q2.choices}&q2.freeText=${answers.q2.freeText}&q3=${answers.q3}&q4.choices=${answers.q4.choices}&q4.freeText=${answers.q4.freeText}&q5=${answers.q5}&q6.choices=${answers.q6.choices}&q6.freeText=${answers.q6.freeText}`;
+      const request = `q1=${answers.q1}&q2.choices=${answers.q2.choices}&q2.freeText=${answers.q2.freeText}&q3=${answers.q3}&q4.choices=${answers.q4.choices}&q4.freeText=${answers.q4.freeText}&q5=${answers.q5}&q6.choices=${answers.q6.choices}&q6.freeText=${answers.q6.freeText}&q7.freeText=${answers.q7}`;
       xhr.send(request);
       localStorage.setItem("getFeedback", true);
       setFeedback(true);
