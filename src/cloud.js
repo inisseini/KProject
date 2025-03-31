@@ -14,6 +14,7 @@ import { store } from "./utils/store-instance";
 import registerTelemetry from "./telemetry";
 import { FormattedMessage } from "react-intl";
 import { ThemeProvider } from "./react-components/styles/theme";
+import MaintenancePage from "./Meintanance";
 
 registerTelemetry("/cloud", "Hubs Cloud Landing Page");
 
@@ -124,7 +125,8 @@ function CloudRoot() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <HubsCloudPage />
+          <MaintenancePage />
+          {/*<HubsCloudPage />*/}
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>

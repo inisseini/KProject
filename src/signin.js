@@ -11,6 +11,7 @@ import "./assets/stylesheets/globals.scss";
 import { Center } from "./react-components/layout/Center";
 import { ThemeProvider } from "./react-components/styles/theme";
 import { store } from "./utils/store-instance";
+import MaintenancePage from "./Meintanance";
 
 registerTelemetry("/signin", "Hubs Sign In Page");
 
@@ -20,13 +21,14 @@ function SignInRoot() {
   return (
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
-        <AuthContextProvider store={store}>
+        <MaintenancePage />
+        {/*<AuthContextProvider store={store}>
           <PageContainer>
             <Center>
               <SignInModalContainer />
             </Center>
           </PageContainer>
-        </AuthContextProvider>
+        </AuthContextProvider>*/}
       </ThemeProvider>
     </WrappedIntlProvider>
   );

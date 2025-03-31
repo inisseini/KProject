@@ -15,6 +15,7 @@ import "./assets/stylesheets/whats-new.scss";
 import { PageContainer } from "./react-components/layout/PageContainer";
 import { Spinner } from "./react-components/misc/Spinner";
 import { ThemeProvider } from "./react-components/styles/theme";
+import MaintenancePage from "./Meintanance";
 
 registerTelemetry("/whats-new", "Hubs What's New");
 
@@ -117,9 +118,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   root.render(
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
-        <AuthContextProvider store={store}>
+        <MaintenancePage />
+        {/*<AuthContextProvider store={store}>
           <WhatsNew />
-        </AuthContextProvider>
+        </AuthContextProvider>*/}
       </ThemeProvider>
     </WrappedIntlProvider>
   );

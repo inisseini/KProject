@@ -11,6 +11,7 @@ import { TokenPageLayout } from "./react-components/tokens/TokenPageLayout";
 import configs from "./utils/configs";
 import { ThemeProvider } from "./react-components/styles/theme";
 import { store } from "./utils/store-instance";
+import MaintenancePage from "./Meintanance";
 
 registerTelemetry("/tokens", "Backend API Tokens Page");
 
@@ -20,9 +21,10 @@ function TokensRoot() {
   return (
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
-        <AuthContextProvider store={store}>
+        <MaintenancePage />
+        {/*<AuthContextProvider store={store}>
           <TokenPageLayout>{configs.feature("public_api_access") && <TokensContainer />}</TokenPageLayout>
-        </AuthContextProvider>
+        </AuthContextProvider>*/}
       </ThemeProvider>
     </WrappedIntlProvider>
   );

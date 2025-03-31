@@ -11,20 +11,24 @@ import LinkChannel from "./utils/link-channel";
 import { connectToReticulum } from "./utils/phoenix-utils";
 import { ThemeProvider } from "./react-components/styles/theme";
 import { store } from "./utils/store-instance";
+import MaintenancePage from "./Meintanance";
 
 registerTelemetry("/link", "Hubs Device Link");
 
-const linkChannel = new LinkChannel(store);
+{
+  /*const linkChannel = new LinkChannel(store);
 
 (async () => {
   const socket = await connectToReticulum();
   linkChannel.setSocket(socket);
-})();
+})();*/
+}
 
 const container = document.getElementById("link-root");
 const root = createRoot(container);
 root.render(
   <ThemeProvider store={store}>
-    <LinkRoot store={store} linkChannel={linkChannel} />
+    <MaintenancePage />
+    {/*<LinkRoot store={store} linkChannel={linkChannel} />*/}
   </ThemeProvider>
 );

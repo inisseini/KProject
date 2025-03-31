@@ -10,6 +10,7 @@ import { AuthContextProvider } from "./react-components/auth/AuthContext";
 }
 import { ThemeProvider } from "./react-components/styles/theme";
 import { store } from "./utils/store-instance";
+import MaintenancePage from "./Meintanance";
 
 registerTelemetry("/home", "Hubs Home Page");
 
@@ -20,7 +21,8 @@ function HomeRoot() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <HomePage />
+          <MaintenancePage />
+          {/*<HomePage />*/}
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
