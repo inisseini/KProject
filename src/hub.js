@@ -794,7 +794,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const shouldRedirectToSignInPage =
     // Default room won't work if account is required to access
     !configs.feature("default_room_id") &&
-    configs.feature("require_account_for_join") &&
+    /*configs.feature("require_account_for_join") &&*/
     !(store.state.credentials && store.state.credentials.token);
   if (shouldRedirectToSignInPage) {
     document.location = `/?sign_in&sign_in_destination=hub&sign_in_destination_url=${encodeURIComponent(
