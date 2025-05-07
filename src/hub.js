@@ -729,6 +729,7 @@ async function runBotMode(scene, entryManager) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Lambda Function URL
+  /*
   const lambdaUrl = "https://4vonjibgddpv3sakejmvvfv4ii0jdgan.lambda-url.ap-northeast-1.on.aws/";
 
   // データ送信用の関数
@@ -756,6 +757,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // 関数を実行
   sendVisitorData();
+  */
   if (!root) {
     const container = document.getElementById("ui-root");
     root = createRoot(container);
