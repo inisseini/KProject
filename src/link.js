@@ -15,14 +15,12 @@ import MaintenancePage from "./Meintanance";
 
 registerTelemetry("/link", "Hubs Device Link");
 
-{
-  /*const linkChannel = new LinkChannel(store);
+const linkChannel = new LinkChannel(store);
 
 (async () => {
   const socket = await connectToReticulum();
   linkChannel.setSocket(socket);
-})();*/
-}
+})();
 
 const container = document.getElementById("link-root");
 const root = createRoot(container);
