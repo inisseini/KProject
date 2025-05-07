@@ -23,7 +23,7 @@ class DiscordPage extends Component {
     return (
       <WrappedIntlProvider>
         <ThemeProvider store={store}>
-          {/*<div className={styles.ui}>
+          <div className={styles.ui}>
             <div className={styles.header}>
               <div className={styles.headerLinks}>
                 <a href="/" rel="noreferrer noopener">
@@ -70,8 +70,8 @@ class DiscordPage extends Component {
               </div>
             </div>
             <div className={styles.bg} />
-          </div>*/}
-          <MaintenancePage />
+          </div>
+          {/*<MaintenancePage />*/}
         </ThemeProvider>
       </WrappedIntlProvider>
     );

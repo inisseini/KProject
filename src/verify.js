@@ -21,14 +21,14 @@ function VerifyRoot() {
   return (
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
-        <MaintenancePage />
-        {/* <AuthContextProvider store={store}>
+        {/*<MaintenancePage />*/}
+        <AuthContextProvider store={store}>
           <PageContainer>
             <Center>
-             <VerifyModalContainer />
+              <VerifyModalContainer />
             </Center>
           </PageContainer>
-        </AuthContextProvider>*/}
+        </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
   );

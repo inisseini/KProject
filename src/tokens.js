@@ -21,10 +21,10 @@ function TokensRoot() {
   return (
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
-        <MaintenancePage />
-        {/*<AuthContextProvider store={store}>
+        {/*<MaintenancePage />*/}
+        <AuthContextProvider store={store}>
           <TokenPageLayout>{configs.feature("public_api_access") && <TokensContainer />}</TokenPageLayout>
-        </AuthContextProvider>*/}
+        </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
   );

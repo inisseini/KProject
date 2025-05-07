@@ -118,10 +118,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   root.render(
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
-        <MaintenancePage />
-        {/*<AuthContextProvider store={store}>
+        {/*<MaintenancePage />*/}
+        <AuthContextProvider store={store}>
           <WhatsNew />
-        </AuthContextProvider>*/}
+        </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
   );

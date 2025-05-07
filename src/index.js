@@ -21,8 +21,8 @@ function HomeRoot() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <MaintenancePage />
-          {/*<HomePage />*/}
+          {/*<MaintenancePage />*/}
+          <HomePage />
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>

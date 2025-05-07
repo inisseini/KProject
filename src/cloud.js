@@ -125,8 +125,8 @@ function CloudRoot() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <MaintenancePage />
-          {/*<HubsCloudPage />*/}
+          {/*<MaintenancePage />*/}
+          <HubsCloudPage />
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>

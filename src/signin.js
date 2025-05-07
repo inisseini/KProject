@@ -21,14 +21,14 @@ function SignInRoot() {
   return (
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
-        <MaintenancePage />
-        {/*<AuthContextProvider store={store}>
+        {/*<MaintenancePage />*/}
+        <AuthContextProvider store={store}>
           <PageContainer>
             <Center>
               <SignInModalContainer />
             </Center>
           </PageContainer>
-        </AuthContextProvider>*/}
+        </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
   );

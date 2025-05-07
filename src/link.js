@@ -28,7 +28,7 @@ const container = document.getElementById("link-root");
 const root = createRoot(container);
 root.render(
   <ThemeProvider store={store}>
-    <MaintenancePage />
-    {/*<LinkRoot store={store} linkChannel={linkChannel} />*/}
+    {/*<MaintenancePage />*/}
+    <LinkRoot store={store} linkChannel={linkChannel} />
   </ThemeProvider>
 );
