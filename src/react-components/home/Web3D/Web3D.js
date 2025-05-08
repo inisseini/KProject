@@ -111,7 +111,7 @@ export function Web3D(props) {
     // 日付をステートにセット
     setCurrentDate(formattedDate);
 
-    if (!stickerInit) {
+    if (!stickerInit && window.Sticker) {
       window.Sticker.init(".sticker", {
         hover: true, // マウスホバーで効果を発動
         offset: 5, // 効果の強さ
